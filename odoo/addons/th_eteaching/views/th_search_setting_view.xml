@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_th_search_setting_tree" model="ir.ui.view">
+        <field name="name">th.search.setting.tree</field>
+        <field name="model">th.search.setting</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="state"/>
+                <!-- Add other fields you want to display in the tree view -->
+                <field name="th_condition_ids" widget="one2many_list"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view -->
+    <record id="view_th_search_setting_form" model="ir.ui.view">
+        <field name="name">th.search.setting.form</field>
+        <field name="model">th.search.setting</field>
+        <field name="arch" type="xml">
+            <form string="">
+                  <header>
+                    <button string="Triển khai" type="object" name="action_deploy" states="draft"/>
+                         <field name="state" widget="statusbar" />
+                </header>
+                <sheet>
+                <div class="oe_title">
+                    <label for="name" string="Tiêu đề"/>
+                    <h1><field name="name"/></h1>
+                </div>
+                    <notebook>
+                        <page string="Điều kiện tìm kiếm" name="condition_page">
+                            <field name="th_condition_ids" widget="one2many_list" options="{'editable': true}" nolabel="1" >
+                                <tree string="Views" editable="top" >
+                                    <field name="th_model_id" />
+                                    <field name="th_display_name"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+    <record id="th_search_setting_model_action" model="ir.actions.act_window">
+        <field name="name">Thiết lập tìm kiếm trên website</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">th.search.setting</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

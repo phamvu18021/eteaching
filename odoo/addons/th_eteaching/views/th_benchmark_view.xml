@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_th_benchmark_tree" model="ir.ui.view">
+        <field name="name">th.benchmark.tree</field>
+        <field name="model">th.benchmark</field>
+        <field name="arch" type="xml">
+            <tree string="">
+                <field name="th_title"/>
+                <field name="th_major"/>
+                <field name="th_block_combine"/>
+                <field name="th_point"/>
+                <field name="th_note"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_th_benchmark_news_form" model="ir.ui.view">
+        <field name="name">th.benchmark.form</field>
+        <field name="model">th.benchmark</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="th_title" string="Tiêu đề"/>
+                        <h1>
+                            <field name="th_title"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="th_major"/>
+                            <field name="th_block_combine"/>
+                        </group>
+                        <group>
+                            <field name="th_point"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Ghi chú">
+                            <group>
+                                <field name="th_note"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="th_benchmark_model_action" model="ir.actions.act_window">
+        <field name="name">Tin Điểm Chuẩn</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">th.benchmark</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
+

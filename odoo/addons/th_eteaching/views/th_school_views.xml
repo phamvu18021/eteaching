@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_th_school_tree" model="ir.ui.view">
+        <field name="name">th.school.tree</field>
+        <field name="model">th.school</field>
+        <field name="arch" type="xml">
+            <tree string="Views" editable="top">
+
+                <field name="th_img_thumb" widget="image" options="{'size': (100, 100)}"/>
+                <field name="name"/>
+                <field name="th_code"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="th_school_model_action" model="ir.actions.act_window">
+        <field name="name">Trường</field>
+        <field name="res_model">th.school</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>
