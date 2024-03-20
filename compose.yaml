@@ -1,0 +1,108 @@
+version: "2.0.0"
+
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+      - "443:443"
+    depends_on:
+      - eteaching-wordpress
+      - eteaching-nextjs
+      - odoo-dashboard
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      - /etc/letsencrypt/ssl/eteaching.eufm.vn:/etc/nginx/ssl/eteaching.eufm.vn
+      - /etc/letsencrypt/ssl/eteachingwp.eufm.vn:/etc/nginx/ssl/eteachingwp.eufm.vn
+      - /opt/aum_web/ssl:/etc/nginx/ssl/eteachingodoo.eufm.vn
+    networks:
+      - frontend
+      - backend
+
+  # service of WEB
+  eteaching-wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    user: 1001:1001
+    environment:
+      WORDPRESS_DB_HOST: eteaching-db
+      WORDPRESS_DB_USER: it_aum
+      WORDPRESS_DB_PASSWORD: It_aum@2024
+      WORDPRESS_DB_NAME: db_eteaching
+    volumes:
+      - ./eteaching-wordpress:/var/www/html
+    networks:
+      - frontend
+      - backend
+
+  eteaching-db:
+    image: mysql:5.7
+    restart: always
+    user: 1001:1001
+    environment:
+      MYSQL_ROOT_PASSWORD: It_aum@root@2024
+      MYSQL_DATABASE: db_eteaching
+      MYSQL_USER: it_aum
+      MYSQL_PASSWORD: It_aum@2024
+    volumes:
+      - ./eteaching-db:/var/lib/mysql
+    networks:
+      - backend
+
+  # Service of ERP
+  odoo-db:
+    image: postgres:13
+    user: root
+    restart: always # run as a service
+    environment:
+      - POSTGRES_USER=odoo
+      - POSTGRES_PASSWORD=odoo16@2022
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./postgresql2:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  odoo-dashboard:
+    build:
+      context: ./odoo
+    user: root
+    depends_on:
+      - odoo-db
+    ports:
+      - "10016:8069"
+    tty: true
+    command: --
+    environment:
+      - HOST=odoo-db
+      - USER=odoo
+      - PASSWORD=odoo16@2022
+    volumes:
+      - ./odoo/addons:/mnt/extra-addons
+      - ./odoo/etc:/etc/odoo
+      - ./odoo/entrypoint.sh:/entrypoint.sh
+    restart: always
+    networks:
+      - frontend
+      - backend
+
+  eteaching-nextjs:
+    build:
+      context: ./eteaching.edu.vn
+    # depends_on:
+    #   - odoo-dashboard
+    ports:
+      - "3000:3000"
+    networks:
+      - frontend
+
+volumes:
+  eteaching-wordpress:
+  eteaching-db:
+  odoo-dashboard:
+  odoo-db:
+
+networks:
+  frontend:
+  backend:
