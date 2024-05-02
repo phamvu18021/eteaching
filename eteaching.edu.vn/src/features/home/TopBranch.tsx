@@ -43,161 +43,6 @@ const Item = ({
   );
 };
 
-const reviews = [
-  {
-    school: "",
-    path: "#",
-    major: "Quản-trị-kinh-doanh",
-    desc: "Chương trình",
-    title: "Quản trị kinh doanh",
-    image: "/icon-kd.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Ngôn-ngữ-Anh",
-    desc: "Hình thức",
-    title: "Ngôn ngữ Anh",
-    image: "/icon-nna.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Công-nghệ-thông-tin",
-    desc: "Phát triển",
-    title: "It",
-    image: "/icon-it.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Tài-chính-ngân-hàng",
-    desc: "NEU E-Learning ",
-    title: "Tài chính ngân hàng",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Luật",
-    desc: "Luôn cập nhật",
-    title: "Luật",
-    image: "/icon-l.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Luật-kinh-tế",
-    desc: "Không cần",
-    title: "Luật kinh tế",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Quản-trị-kinh-doanh",
-    desc: "Chương trình ",
-    title: "Quản trị kinh doanh",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Ngôn-ngữ-Anh",
-    desc: "Hình thức",
-    title: "Ngôn ngữ Anh",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Kế-toán",
-    desc: "Phát triển ",
-    title: "Áp dụng thực tiễn",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Công-nghệ-thông-tin",
-    desc: "NEU E-Learning ",
-    title: "Thương hiệu top 1 ",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Luật-kinh-tế",
-    desc: "cập nhật",
-    title: "Tư vấn 24/7",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Công-nghệ-thông-tin",
-    desc: "thi tuyển",
-    title: "Công nghệ thông tin",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Công-nghệ-thông-tin",
-    desc: " thi tuyển, .",
-    title: "Công nghệ thông tin",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Tài-chính-ngân-hàng",
-    desc: "Bằng ",
-    title: "Tài chính ngân hàng",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Ngôn-ngữ-Trung",
-    desc: "100% giảng viên ",
-    title: "Ngôn ngữ Trung",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Ngôn-ngữ-Anh",
-    desc: "Hình thức ",
-    title: "Ngôn ngữ Anh",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Công-nghệ-thông-tin",
-    desc: "Phát triển ",
-    title: "Áp dụng thực tiễn",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Luật-kinh-tế",
-    desc: "NEU E-Learning ",
-    title: "Thương hiệu top 1 ",
-    image: "/icon-tcnh.webp"
-  },
-  {
-    school: "",
-    path: "#",
-    major: "Quản-trị-kinh-doanh",
-    desc: "Luôn cập ",
-    title: "Tư vấn 24/7",
-    image: "/icon-tcnh.webp"
-  }
-];
-
 const slidesPerView = {
   base: 1, // Giá trị mặc định cho màn hình cỡ nhỏ
   md: 2, // Giá trị cho màn hình có độ rộng từ 48em trở lên
@@ -206,7 +51,121 @@ const slidesPerView = {
   "2xl": 4 // Giá trị cho màn hình có độ rộng từ 96em trở lên
 };
 
-export const TopBranch = () => {
+export const TopBranch = (topBranch: any) => {
+  const reviews = [
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_1?.link || "#",
+      major: topBranch?.topBranch?.major_1?.title || "Quản-trị-kinh-doanh",
+      desc: topBranch?.topBranch?.major_1?.desc || "Chương trìnhz",
+      title: topBranch?.topBranch?.major_1?.name || "Quản trị kinh doanh",
+      image: topBranch?.topBranch?.major_1?.image || "/icon-kd.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_2?.link || "#",
+      major: topBranch?.topBranch?.major_2?.title || "Ngôn-ngữ-Anh",
+      desc: topBranch?.topBranch?.major_2?.desc || "Hình thứcz",
+      title: topBranch?.topBranch?.major_2?.name || "Ngôn ngữ Anh",
+      image: topBranch?.topBranch?.major_2?.image || "/icon-nna.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_3?.link || "#",
+      major: topBranch?.topBranch?.major_3?.title || "Công-nghệ-thông-tin",
+      desc: topBranch?.topBranch?.major_3?.desc || "Phát triển",
+      title: topBranch?.topBranch?.major_3?.name || "It",
+      image: topBranch?.topBranch?.major_3?.image || "/icon-it.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_4?.link || "#",
+      major: topBranch?.topBranch?.major_4?.title || "Tài-chính-ngân-hàng",
+      desc: topBranch?.topBranch?.major_4?.desc || "NEU E-Learning ",
+      title: topBranch?.topBranch?.major_4?.name || "Tài chính ngân hàng",
+      image: topBranch?.topBranch?.major_4?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_5?.link || "#",
+      major: topBranch?.topBranch?.major_5?.title || "Luật",
+      desc: topBranch?.topBranch?.major_5?.desc || "Luôn cập nhật",
+      title: topBranch?.topBranch?.major_5?.name || "Luật",
+      image: topBranch?.topBranch?.major_5?.image || "/icon-l.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_6?.link || "#",
+      major: topBranch?.topBranch?.major_6?.title || "Luật-kinh-tế",
+      desc: topBranch?.topBranch?.major_6?.desc || "Không cần",
+      title: topBranch?.topBranch?.major_6?.name || "Luật kinh tế",
+      image: topBranch?.topBranch?.major_6?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_7?.link || "#",
+      major: topBranch?.topBranch?.major_7?.title || "Quản-trị-kinh-doanh",
+      desc: topBranch?.topBranch?.major_7?.desc || "Chương trình ",
+      title: topBranch?.topBranch?.major_7?.name || "Quản trị kinh doanh",
+      image: topBranch?.topBranch?.major_7?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_8?.link || "#",
+      major: topBranch?.topBranch?.major_8?.title || "Ngôn-ngữ-Anh",
+      desc: topBranch?.topBranch?.major_8?.desc || "Hình thức",
+      title: topBranch?.topBranch?.major_8?.name || "Ngôn ngữ Anh",
+      image: topBranch?.topBranch?.major_8?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_9?.link || "#",
+      major: topBranch?.topBranch?.major_9?.title || "Kế-toán",
+      desc: topBranch?.topBranch?.major_9?.desc || "Phát triển ",
+      title: topBranch?.topBranch?.major_9?.name || "Áp dụng thực tiễn",
+      image: topBranch?.topBranch?.major_9?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_10?.link || "#",
+      major: topBranch?.topBranch?.major_10?.title || "Công-nghệ-thông-tin",
+      desc: topBranch?.topBranch?.major_10?.desc || "NEU E-Learning ",
+      title: topBranch?.topBranch?.major_10?.name || "Thương hiệu top 1 ",
+      image: topBranch?.topBranch?.major_10?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_11?.link || "#",
+      major: topBranch?.topBranch?.major_11?.title || "Luật-kinh-tế",
+      desc: topBranch?.topBranch?.major_11?.desc || "cập nhật",
+      title: topBranch?.topBranch?.major_11?.name || "Tư vấn 24/7",
+      image: topBranch?.topBranch?.major_11?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_12?.link || "#",
+      major: topBranch?.topBranch?.major_12?.title || "Công-nghệ-thông-tin",
+      desc: topBranch?.topBranch?.major_12?.desc || "thi tuyển",
+      title: topBranch?.topBranch?.major_12?.name || "Công nghệ thông tin",
+      image: topBranch?.topBranch?.major_12?.image || "/icon-tcn2.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_13?.link || "#",
+      major: topBranch?.topBranch?.major_13?.title || "Công-nghệ-thông-tin",
+      desc: topBranch?.topBranch?.major_13?.desc || " thi tuyển",
+      title: topBranch?.topBranch?.major_13?.name || "Công nghệ thông tin",
+      image: topBranch?.topBranch?.major_13?.image || "/icon-tcnh.webp"
+    },
+    {
+      school: "",
+      path: topBranch?.topBranch?.major_14?.link || "#",
+      major: topBranch?.topBranch?.major_14?.title || "Tài-chính-ngân-hàng",
+      desc: topBranch?.topBranch?.major_14?.desc || "Bằng ",
+      title: topBranch?.topBranch?.major_14?.name || "Tài chính ngân hàng",
+      image: topBranch?.topBranch?.major_14?.image || "/icon-tcnh.webp"
+    }
+  ];
   return (
     <Container maxW="6xl" mt={"-40px"} px={"-20px"}>
       <Text
@@ -220,7 +179,7 @@ export const TopBranch = () => {
         textAlign="left"
         mb="50px"
       >
-        Top ngành học nổi bật
+        {topBranch?.topBranch?.title || "Top ngành học nổi bậtz"}
       </Text>
 
       <Swiperlayout

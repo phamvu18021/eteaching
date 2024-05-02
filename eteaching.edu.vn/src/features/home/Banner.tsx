@@ -26,14 +26,14 @@ export const CardBanner = ({
   );
 };
 
-export const Banner = () => {
+export const Banner = (banner: any) => {
   const teachers = [
     {
       school: "",
       major: "",
       path: "#",
       title: "Tuyển sinh năm 2023",
-      image: `/1.png`,
+      image: banner?.banner?.banner_image?.banner_1 || `/1.webp`,
       desc: ``
     },
     {
@@ -41,7 +41,7 @@ export const Banner = () => {
       major: "",
       path: "#",
       title: "Tuyển sinh năm 2023",
-      image: `/2.png`,
+      image: banner?.banner?.banner_image?.banner_2 || `/2.webp`,
       desc: ``
     },
     {
@@ -49,7 +49,7 @@ export const Banner = () => {
       major: "",
       path: "#",
       title: "Tuyển sinh năm 2023",
-      image: `/3.png`,
+      image: banner?.banner?.banner_image?.banner_3 || `/3.webp`,
       desc: ``
     },
     {
@@ -57,7 +57,7 @@ export const Banner = () => {
       major: "",
       path: "#",
       title: "Tuyển sinh năm 2023",
-      image: `/4.png`,
+      image: banner?.banner?.banner_image?.banner_4 || `/4.webp`,
       desc: ``
     }
   ];
@@ -86,7 +86,8 @@ export const Banner = () => {
           textAlign="center"
           pb={"24px"}
         >
-          Lựa chọn ngành nghề đào tạo, các trường đào tạo phù hợp nhất với bạn
+          {banner?.banner?.banner_title ||
+            "Lựa chọn ngành nghề đào tạo, các trường đào tạo phù hợp nhất với bạn"}
         </Text>
         <SearchForm />
       </Container>

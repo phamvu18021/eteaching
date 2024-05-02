@@ -19,8 +19,8 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
     const res = await fetch(`${api_url}/posts?slug=${slug}`, {
       next: { revalidate: 3600 }
     });
-    const posts = await res.json();
-    const post = posts ? posts[0] : null;
+    const posts = (await res.json()) || "";
+    const post: [any] = posts ? posts[0] : null;
     const resSeo = await fetchSeo({
       url: `${url}/${slug}`,
       revalidate: 3600
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async (context: any) => {
       props: { post: post || null, head: head?.head || null }
     };
   } catch (error) {
-    console.log(error);
+    console.error("Error in fetching slug", error);
     return {
       props: { post: null }
     };
@@ -45,11 +45,21 @@ interface IPostPage {
 
 const Page = (props: IPostPage) => {
   const { post, head } = props;
+  const getTitleFromMeta = (head: string) => {
+    const match = head.match(/<meta\s+property="og:title"\s+content="([^"]*)"/);
+    return match ? match[1] : null;
+  };
+  // Lấy nội dung từ thẻ meta
+  const ogTitleContent = props.head ? getTitleFromMeta(props.head) : null;
+
   return (
     <>
       {head && (
         <div>
-          <Head>{ReactHtmlParser(replaceSeoRM(head))}</Head>
+          <Head>
+            {ReactHtmlParser(replaceSeoRM(head))}
+            <title>{ogTitleContent}</title>
+          </Head>
         </div>
       )}
       <Post post={post} />

@@ -3,10 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "eteachingwp.eufm.vn",
-      "eteaching.eufm.vn",
+      "odoo.eteaching.ongdev.online",
+      "admin.eteaching.ongdev.online",
+      "eteaching.ongdev.online",
       "localhost",
-      "eteachingodoo.eufm.vn"
+      "127.0.0.1",
+      "10.10.51.99"
     ]
   }
 };

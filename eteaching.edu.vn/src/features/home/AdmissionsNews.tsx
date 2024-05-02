@@ -17,7 +17,7 @@ import { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import { FilterHomepage } from "./FilterHomepage";
 
-export const AdmissionsNews = () => {
+export const AdmissionsNews = (admissonsTitle: any) => {
   const { unit, unit_value } = useFilterHomepage();
 
   const [currentpage, setCurrentPage] = useState<number>(1);
@@ -29,8 +29,6 @@ export const AdmissionsNews = () => {
         page: String(currentpage)
       })
   );
-
-  console.log(data);
   const next = () => {
     setCurrentPage((prev: number) => prev + 1);
   };
@@ -60,7 +58,7 @@ export const AdmissionsNews = () => {
     <Box bg={"SecondWhite.150"}>
       <Container maxW={"6xl"}>
         <Text color={"#009643"} fontSize={"24px"} fontWeight={700} py={4}>
-          Đại học tốt nhất
+          {admissonsTitle?.admissonsTitle || "Đại học tốt nhấtz"}
         </Text>
         <FilterHomepage />
 

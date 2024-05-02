@@ -34,66 +34,89 @@ const Item = ({ title, image }: { title: string; image: string }) => {
   );
 };
 
-const reviews = [
-  {
-    school: "dai-hoc-thai-nguyen",
-    major: "",
-    path: "#",
-    image: "/Logo-dhtn.png",
-    title: "Đại học Thái Nguyên",
-    desc: `Hệ đào tạo từ xa `
-  },
-  {
-    school: "dai-hoc-nong-lam-thai-nguyen",
-    major: "",
-    path: "#",
-    image: "/Logo-nltn.png",
-    title: "Đại học Nông Lâm Thái Nguyên",
-    desc: `Hệ đào tạo từ xa`
-  },
-  {
-    school: "dai-hoc-mo-ha-noi",
-    major: "",
-    path: "#",
-    image: "/Logo-ehou.png",
-    title: "Đại học Mở Hà Nội",
-    desc: `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
-  },
-  {
-    school: "dai-hoc-ky-thuat-cong-nghiep-thai-nguyen",
-    major: "",
-    path: "#",
-    image: "/Logo-ktcn2.png",
-    title: "Đại học Kỹ Thuật Công Nghiệp Thái Nguyên",
-    desc: `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
-  },
-  {
-    school: "hoc-vien-tai-chinh",
-    major: "",
-    path: "#",
-    image: "/Logo-hvtc1.png",
-    desc: `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`,
-    title: "Học viện Tài chính"
-  },
-  {
-    school: "dai-hoc-kinh-te-quoc-dan",
-    major: "",
-    path: "#",
-    image: "/Logo-neu3.png",
-    title: "Đại học Kinh tế Quốc dân",
-    desc: `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
-  },
-  {
-    school: "hoc-vien-cong-nghe-buu-chinh-vien-thong",
-    major: "",
-    path: "#",
-    image: "/ptit-logo.png",
-    title: "Học viện Bưu chính Viễn thông ",
-    desc: `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
-  }
-];
-
-export const TopSchool = () => {
+export const TopSchool = (topSchool: any) => {
+  const reviews = [
+    {
+      school: topSchool?.topSchool?.university_1?.name || "dai-hoc-thai-nguyen",
+      major: "",
+      path: topSchool?.topSchool?.university_1?.link || "#",
+      image: topSchool?.topSchool?.university_1?.image || "/Logo-dhtn.png",
+      title: topSchool?.topSchool?.university_1?.title || "Đại học Thái Nguyên",
+      desc: topSchool?.topSchool?.university_1?.name || `Hệ đào tạo từ xa `
+    },
+    {
+      school:
+        topSchool?.topSchool?.university_2?.name ||
+        "dai-hoc-nong-lam-thai-nguyen",
+      major: "",
+      path: topSchool?.topSchool?.university_2?.link || "#",
+      image: topSchool?.topSchool?.university_2?.image || "/Logo-nltn.png",
+      title:
+        topSchool?.topSchool?.university_2?.title ||
+        "Đại học Nông Lâm Thái Nguyên",
+      desc: topSchool?.topSchool?.university_2?.name || `Hệ đào tạo từ xa`
+    },
+    {
+      school: topSchool?.topSchool?.university_3?.name || "dai-hoc-mo-ha-noi",
+      major: "",
+      path: topSchool?.topSchool?.university_3?.link || "#",
+      image: topSchool?.topSchool?.university_3?.image || "/Logo-ehou.png",
+      title: topSchool?.topSchool?.university_3?.title || "Đại học Mở Hà Nội",
+      desc:
+        topSchool?.topSchool?.university_3?.name ||
+        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+    },
+    {
+      school:
+        topSchool?.topSchool?.university_4?.name ||
+        "dai-hoc-ky-thuat-cong-nghiep-thai-nguyen",
+      major: "",
+      path: topSchool?.topSchool?.university_4?.link || "#",
+      image: topSchool?.topSchool?.university_4?.image || "/Logo-ktcn2.png",
+      title:
+        topSchool?.topSchool?.university_4?.title ||
+        "Đại học Kỹ Thuật Công Nghiệp Thái Nguyên",
+      desc:
+        topSchool?.topSchool?.university_4?.name ||
+        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+    },
+    {
+      school: topSchool?.topSchool?.university_5?.name || "hoc-vien-tai-chinh",
+      major: "",
+      path: topSchool?.topSchool?.university_5?.link || "#",
+      image: topSchool?.topSchool?.university_5?.image || "/Logo-hvtc1.png",
+      desc:
+        topSchool?.topSchool?.university_5?.title ||
+        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`,
+      title: topSchool?.topSchool?.university_5?.name || "Học viện Tài chính"
+    },
+    {
+      school:
+        topSchool?.topSchool?.university_6?.name || "dai-hoc-kinh-te-quoc-dan",
+      major: "",
+      path: topSchool?.topSchool?.university_6?.link || "#",
+      image: topSchool?.topSchool?.university_6?.image || "/Logo-neu3.png",
+      title:
+        topSchool?.topSchool?.university_6?.title || "Đại học Kinh tế Quốc dân",
+      desc:
+        topSchool?.topSchool?.university_6?.name ||
+        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+    },
+    {
+      school:
+        topSchool?.topSchool?.university_7?.name ||
+        "hoc-vien-cong-nghe-buu-chinh-vien-thong",
+      major: "",
+      path: topSchool?.topSchool?.university_7?.link || "#",
+      image: topSchool?.topSchool?.university_7?.image || "/ptit-logo.png",
+      title:
+        topSchool?.topSchool?.university_7?.title ||
+        "Học viện Bưu chính Viễn thông ",
+      desc:
+        topSchool?.topSchool?.university_7?.name ||
+        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+    }
+  ];
   const slidesPerView = {
     base: 2, // Giá trị mặc định cho màn hình cỡ nhỏ
     md: 3, // Giá trị cho màn hình có độ rộng từ 48em trở lên
@@ -112,7 +135,7 @@ export const TopSchool = () => {
         lineHeight="40px"
         textAlign="left"
       >
-        Danh sách các trường nổi bật
+        {topSchool?.topSchool?.title || "Danh sách các trường nổi bậtz"}
       </Text>
       <Swiperlayout
         slides={reviews}

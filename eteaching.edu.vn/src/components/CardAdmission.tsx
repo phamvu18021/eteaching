@@ -6,13 +6,12 @@ import {
   Card,
   GridItem,
   HStack,
-  Img,
   SimpleGrid,
   Text,
   Tooltip
 } from "@chakra-ui/react";
 import Link from "next/link";
-
+import Image from "next/image";
 export const CardAdmission = ({
   title,
   desc,
@@ -74,7 +73,13 @@ export const CardAdmission = ({
               overflow={"hidden"}
               borderRadius={"2px"}
             >
-              <Img width={"100%"} src={image || `/1.png`} alt={title} />
+              <Image
+                width={"100"}
+                height={"100"}
+                src={image || `/1.webp`}
+                style={{ width: "auto", height: "100" }}
+                alt={title}
+              />
             </Box>
           </GridItem>
           <GridItem

@@ -5,14 +5,13 @@ import {
   Box,
   GridItem,
   HStack,
-  Img,
   SimpleGrid,
   Skeleton,
   Text,
   Tooltip
 } from "@chakra-ui/react";
 import Link from "next/link";
-
+import Image from "next/image";
 export const CardNew = ({
   title,
   desc,
@@ -47,11 +46,12 @@ export const CardNew = ({
             overflow={"hidden"}
           >
             <Skeleton isLoaded={isLoading}>
-              <Img
-                width={"100%"}
-                height={"100%"}
+              <Image
+                width={"400"}
+                height={"400"}
                 src={image || `/1.png`}
                 alt={title}
+                style={{ width: "400px", height: "auto" }}
               />
             </Skeleton>
           </Box>

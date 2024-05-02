@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import { title } from "process";
+
 export type TMenus = {
   path: string;
   title: string;
@@ -66,5 +69,10 @@ export const menus = [
   {
     path: "/tin-tuc", // the url
     title: "Tin tức"
+  },
+
+  {
+    path: "/tin-diem-chuan",
+    title: "Tin điểm chuẩn"
   }
 ];

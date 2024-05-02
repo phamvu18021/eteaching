@@ -4,7 +4,7 @@ import { BtnQuiz } from "@/components/BtnTheme";
 import { Box, Container, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 import Image from "next/image";
 
-export const Consulting = () => {
+export const Consulting = (consulting: any) => {
   return (
     <Box
       bgImage={"/bg_header.webp"}
@@ -29,7 +29,8 @@ export const Consulting = () => {
               fontSize={{ base: "24px", lg: "30px", md: "30px" }}
               mb="32px"
             >
-              Bạn không biết nên bắt đầu từ đâu?
+              {consulting?.consulting?.consulting_text?.text_1 ||
+                "Bạn không biết nên bắt đầu từ đâu?z"}
             </Text>
             <Text
               fontWeight={300}
@@ -38,13 +39,13 @@ export const Consulting = () => {
               lineHeight="30px"
               mb="40px"
             >
-              Hãy cho chúng tôi biết điều gì quan trọng nhất với bạn và chúng
-              tôi sẽ tạo một danh sách tùy chỉnh các trường phù hợp với nhu cầu
-              của bạn.
+              {consulting?.consulting?.consulting_text?.text_2 ||
+                "Hãy cho chúng tôi biết điều gì quan trọng nhất với bạn và chúng tôi sẽ tạo một danh sách tùy chỉnh các trường phù hợp với nhu cầu của bạnz."}
             </Text>
 
             <BtnQuiz w="250px" href={"/cau-hoi-trac-nghiem"}>
-              Bắt đầu
+              {consulting?.consulting?.consulting_text?.text_button ||
+                "Bắt đầuz"}
             </BtnQuiz>
           </GridItem>
           <GridItem>

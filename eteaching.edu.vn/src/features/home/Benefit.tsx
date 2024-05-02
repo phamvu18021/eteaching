@@ -103,63 +103,98 @@ export const Item = ({
   );
 };
 
-export const Benefit = () => {
+export const Benefit = (benefit: any) => {
   const teachers = [
     {
       school: "",
       major: "",
-      path: "https://bcvt.edu.vn/",
-      title: "Học viện Công nghệ Bưu chính Viễn thông",
-      image: `/a.jpg`,
-      desc: `/ptit-logo.png`
+      path:
+        benefit?.benefit?.Universities?.university_1?.link ||
+        "https://bcvt.edu.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_1?.name ||
+        "Học viện Công nghệ Bưu chính Viễn thôngz",
+      image: benefit?.benefit?.Universities?.university_1?.image || `/a.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_1?.logo || `/ptit-logo.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://eaof.vn/",
-      title: "Học viện Tài chính",
-      image: `/a1.jpg`,
-      desc: `/Logo-hvtc1.png`
+      path:
+        benefit?.benefit?.Universities?.university_2?.link ||
+        "https://eaof.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_2?.name ||
+        "Học viện Tài chínhz",
+      image: benefit?.benefit?.Universities?.university_2?.image || `/a1.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_2?.logo || `/Logo-hvtc1.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://dec.neu.edu.vn/",
-      title: "Đại học Kinh tế Quốc dân",
-      image: `/a2.jpg`,
-      desc: `/Logo-neu3.png`
+      path:
+        benefit?.benefit?.Universities?.university_3?.link ||
+        "https://dec.neu.edu.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_3?.name ||
+        "Đại học Kinh tế Quốc dânz",
+      image: benefit?.benefit?.Universities?.university_3?.image || `/a2.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_3?.logo || `/Logo-neu3.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://tuaf.vn/",
-      title: "Đại học Nông Lâm Thái Nguyên",
-      image: `/a3.jpg`,
-      desc: `/Logo-tuaf1.png`
+      path:
+        benefit?.benefit?.Universities?.university_4?.link ||
+        "https://tuaf.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_4?.name ||
+        "Đại học Nông Lâm Thái Nguyênz",
+      image: benefit?.benefit?.Universities?.university_4?.image || `/a3.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_4?.logo || `/Logo-tuaf1.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://dhthainguyen.edu.vn/",
-      title: "Đại Học Thái Nguyên",
-      image: `/a4.jpg`,
-      desc: `/Logo-dhtn.png`
+      path:
+        benefit?.benefit?.Universities?.university_5?.link ||
+        "https://dhthainguyen.edu.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_5?.name ||
+        "Đại Học Thái Nguyênz",
+      image: benefit?.benefit?.Universities?.university_5?.image || `/a4.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_5?.logo || `/Logo-dhtn.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://ehou.vn/",
-      title: "Đại học Mở Hà Nội",
-      image: `/a5.jpg`,
-      desc: `/Logo-ehou.png`
+      path:
+        benefit?.benefit?.Universities?.university_6?.link ||
+        "https://ehou.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_6?.name ||
+        "Đại học Mở Hà Nộiz",
+      image: benefit?.benefit?.Universities?.university_6?.image || `/a5.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_6?.logo || `/Logo-ehou.webp`
     },
     {
       school: "",
       major: "",
-      path: "https://tnut.vn/",
-      title: "Đại học Kỹ thuật Công nghiệp",
-      image: `/a6.jpg`,
-      desc: `/Logo-ktcn2.png`
+      path:
+        benefit?.benefit?.Universities?.university_7?.link ||
+        "https://tnut.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_7?.name ||
+        "Đại học Kỹ thuật Công nghiệpz",
+      image: benefit?.benefit?.Universities?.university_7?.image || `/a6.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_7?.logo || `/Logo-ktcn2.webp`
     }
   ];
 
@@ -182,7 +217,8 @@ export const Benefit = () => {
           lineHeight="40px"
           textAlign="left"
         >
-          Lợi ích khi theo học chương trình đào tạo từ xa trình độ đại học
+          {benefit?.benefit?.section_title ||
+            "Lợi ích khi theo học chương trình đào tạo từ xa trình độ đại học"}
         </Text>
         <SimpleGrid
           mt="50px"
@@ -213,7 +249,7 @@ export const Benefit = () => {
             </Box>
 
             <Text fontSize={"12px"} fontWeight={500}>
-              Không thi tuyển
+              {benefit?.benefit?.benefits?.text_1 || "Không thi tuyển"}
             </Text>
           </GridItem>
           <GridItem
@@ -236,7 +272,8 @@ export const Benefit = () => {
             </Box>
 
             <Text fontSize={"12px"} fontWeight={500}>
-              Học mọi lúc mọi nơi, tiết kiệm thời gian & chi phí
+              {benefit?.benefit?.benefits?.text_2 ||
+                "Học mọi lúc mọi nơi, tiết kiệm thời gian & chi phí"}
             </Text>
           </GridItem>
 
@@ -259,7 +296,8 @@ export const Benefit = () => {
               <BiSupport />
             </Box>
             <Text fontSize={"12px"} fontWeight={500}>
-              Hỗ trợ 24/7, lộ trình đào tạo rút gọn
+              {benefit?.benefit?.benefits?.text_3 ||
+                "Hỗ trợ 24/7, lộ trình đào tạo rút gọn"}
             </Text>
           </GridItem>
           <GridItem
@@ -281,7 +319,8 @@ export const Benefit = () => {
               <GiDiploma />
             </Box>
             <Text fontSize={"12px"} fontWeight={500}>
-              Bằng cấp chất lượng được Bộ GD&DT công nhận
+              {benefit?.benefit?.benefits?.text_4 ||
+                "Bằng cấp chất lượng được Bộ GD&DT công nhận"}
             </Text>
           </GridItem>
         </SimpleGrid>

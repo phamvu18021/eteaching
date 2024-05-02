@@ -112,3 +112,90 @@ export const getFilterCommon = async () => {
     return { error: "Filed to get filter common" };
   }
 };
+
+export const getBenchMarks = async ({
+  page = "1",
+  perpage = "9",
+  school = "all",
+  major = "all",
+  block_combine = "all",
+  year = "all",
+  point = "all"
+}: {
+  page?: string;
+  perpage?: string;
+  school?: string;
+  major?: string;
+  block_combine?: string;
+  year?: string;
+  point?: string;
+}) => {
+  try {
+    const res = await fetchAuth({
+      api_url: `/api/admin/list-benchmark/?page=${page}&perpage=${perpage}&school=${school}&major=${major}&block_combine=${block_combine}&year=${year}&point=${point}`,
+      method: "POST"
+    });
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get list benchmark" };
+  }
+};
+
+export const getFilterBenchMark = async () => {
+  try {
+    const response = await fetchAuth({
+      api_url: `/api/admin/filter-benchmark`,
+      method: "POST"
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Filed to get filter benchmark" };
+  }
+};
+
+export const getMajorUniver = async () => {
+  try {
+    const response = await fetchAuth({
+      api_url: `/api/admin/major-univer`,
+      method: "POST"
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Filed to get school and univer" };
+  }
+};
+
+export const getBenchMarkByUni = async ({ unicode }: { unicode: string }) => {
+  try {
+    const response = await fetchAuth({
+      api_url: `/api/admin/benchmark-by-university/?unicode=${unicode}`,
+      method: "POST"
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get benchmark by university" };
+  }
+};
+
+export const getBenchMarkByMajor = async ({ major }: { major: string }) => {
+  try {
+    const response = await fetchAuth({
+      api_url: `/api/admin/benchmark-by-major/?major=${major}`,
+      method: "POST"
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get benchmark by major" };
+  }
+};
