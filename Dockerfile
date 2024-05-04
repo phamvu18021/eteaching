@@ -19,11 +19,11 @@ WORKDIR /app
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-ENV API_URL https://admin.eteaching.ongdev.online/wp-json/wp/v2
-ENV NEXT_PUBLIC_DOMAIN https://eteaching.ongdev.online
+ENV API_URL https://admin-wordpress.ongdev.online/wp-json/wp/v2
+ENV NEXT_PUBLIC_DOMAIN https://etc.ongdev.online
 ENV NEXT_PUBLIC_TOKEN_NEXT 610f25e22dbccb07171886c016103a86
-ENV ODOO_URL https://odoo.eteaching.ongdev.online
-ENV API_RMS_URL https://admin.eteaching.ongdev.online/wp-json/rankmath/v1/getHead?url=https://admin.eteaching.ongdev.online
+ENV ODOO_URL https://admin-odoo.ongdev.online
+ENV API_RMS_URL https://admin-wordpress.ongdev.online/wp-json/rankmath/v1/getHead?url=https://admin-wordpress.ongdev.online
 
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs

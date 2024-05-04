@@ -1,20 +1,8 @@
 import { ReactNode } from "react";
-import dynamic from "next/dynamic";
+import { BackToTop } from "./components/BackToTop";
+import { Footer } from "./footer";
+import { Header } from "./header";
 
-const Header = dynamic(() => import("./header").then((mod) => mod.Header), {
-  loading: () => <p>Loading...</p>
-});
-
-const Footer = dynamic(() => import("./footer").then((mod) => mod.Footer), {
-  loading: () => <p>Loading...</p>
-});
-
-const BackToTop = dynamic(
-  () => import("./components/BackToTop").then((mod) => mod.BackToTop),
-  {
-    loading: () => <p>Loading...</p>
-  }
-);
 interface ILayout {
   children: ReactNode;
 }
