@@ -40,7 +40,7 @@ export const TopSchool = (topSchool: any) => {
       school: topSchool?.topSchool?.university_1?.name || "dai-hoc-thai-nguyen",
       major: "",
       path: topSchool?.topSchool?.university_1?.link || "#",
-      image: topSchool?.topSchool?.university_1?.image || "/Logo-dhtn.png",
+      image: topSchool?.topSchool?.university_1?.image || "/Logo-dhtn.webp",
       title: topSchool?.topSchool?.university_1?.title || "Đại học Thái Nguyên",
       desc: topSchool?.topSchool?.university_1?.name || `Hệ đào tạo từ xa `
     },
@@ -50,7 +50,7 @@ export const TopSchool = (topSchool: any) => {
         "dai-hoc-nong-lam-thai-nguyen",
       major: "",
       path: topSchool?.topSchool?.university_2?.link || "#",
-      image: topSchool?.topSchool?.university_2?.image || "/Logo-nltn.png",
+      image: topSchool?.topSchool?.university_2?.image || "/Logo-nltn.webp",
       title:
         topSchool?.topSchool?.university_2?.title ||
         "Đại học Nông Lâm Thái Nguyên",
@@ -60,7 +60,7 @@ export const TopSchool = (topSchool: any) => {
       school: topSchool?.topSchool?.university_3?.name || "dai-hoc-mo-ha-noi",
       major: "",
       path: topSchool?.topSchool?.university_3?.link || "#",
-      image: topSchool?.topSchool?.university_3?.image || "/Logo-ehou.png",
+      image: topSchool?.topSchool?.university_3?.image || "/Logo-ehou.webp",
       title: topSchool?.topSchool?.university_3?.title || "Đại học Mở Hà Nội",
       desc:
         topSchool?.topSchool?.university_3?.name ||
@@ -72,7 +72,7 @@ export const TopSchool = (topSchool: any) => {
         "dai-hoc-ky-thuat-cong-nghiep-thai-nguyen",
       major: "",
       path: topSchool?.topSchool?.university_4?.link || "#",
-      image: topSchool?.topSchool?.university_4?.image || "/Logo-ktcn2.png",
+      image: topSchool?.topSchool?.university_4?.image || "/Logo-ktcn2.webp",
       title:
         topSchool?.topSchool?.university_4?.title ||
         "Đại học Kỹ Thuật Công Nghiệp Thái Nguyên",
@@ -84,7 +84,7 @@ export const TopSchool = (topSchool: any) => {
       school: topSchool?.topSchool?.university_5?.name || "hoc-vien-tai-chinh",
       major: "",
       path: topSchool?.topSchool?.university_5?.link || "#",
-      image: topSchool?.topSchool?.university_5?.image || "/Logo-hvtc1.png",
+      image: topSchool?.topSchool?.university_5?.image || "/Logo-hvtc1.webp",
       desc:
         topSchool?.topSchool?.university_5?.title ||
         `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`,
@@ -95,7 +95,7 @@ export const TopSchool = (topSchool: any) => {
         topSchool?.topSchool?.university_6?.name || "dai-hoc-kinh-te-quoc-dan",
       major: "",
       path: topSchool?.topSchool?.university_6?.link || "#",
-      image: topSchool?.topSchool?.university_6?.image || "/Logo-neu3.png",
+      image: topSchool?.topSchool?.university_6?.image || "/Logo-neu3.webp",
       title:
         topSchool?.topSchool?.university_6?.title || "Đại học Kinh tế Quốc dân",
       desc:
@@ -108,7 +108,7 @@ export const TopSchool = (topSchool: any) => {
         "hoc-vien-cong-nghe-buu-chinh-vien-thong",
       major: "",
       path: topSchool?.topSchool?.university_7?.link || "#",
-      image: topSchool?.topSchool?.university_7?.image || "/ptit-logo.png",
+      image: topSchool?.topSchool?.university_7?.image || "/ptit-logo.webp",
       title:
         topSchool?.topSchool?.university_7?.title ||
         "Học viện Bưu chính Viễn thông ",

@@ -2,7 +2,8 @@
 
 import { SearchForm } from "@/components/SearchForm";
 import { Swiperlayout } from "@/components/Swiperlayout";
-import { Box, Container, Image, Text } from "@chakra-ui/react";
+import { Box, Container, Text } from "@chakra-ui/react";
+import Image from "next/image";
 
 export const CardBanner = ({
   title,
@@ -14,13 +15,17 @@ export const CardBanner = ({
   return (
     <Box>
       <Image
+        priority
         className="Image"
         src={image}
         alt={title}
-        width={"100%"}
-        objectFit={"cover"}
-        height={"auto"}
-        rounded={{ base: "sm", md: "md", lg: "lg" }}
+        width={"1100"}
+        height={"220"}
+        style={{
+          width: "auto",
+          height: "100%",
+          borderRadius: "0.5rem"
+        }}
       />
     </Box>
   );
