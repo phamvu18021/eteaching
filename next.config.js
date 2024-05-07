@@ -3,9 +3,9 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     domains: [
-      "admin-wordpress.ongdev.online",
-      "admin-odoo.ongdev.online",
-      "etc.ongdev.online",
+      "edit.eteaching.vn",
+      "admin.eteaching.vn",
+      "eteaching.vn",
       "localhost",
       "127.0.0.1",
       "10.10.51.99"
