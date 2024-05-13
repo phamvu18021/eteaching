@@ -1,4 +1,4 @@
-import { SendSheets } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { Box, Container, GridItem, SimpleGrid, Text } from "@chakra-ui/react";
 
 export const Contact = (contact: any) => {
@@ -69,7 +69,7 @@ export const Contact = (contact: any) => {
             </Box>
           </GridItem>
           <GridItem>
-            <SendSheets title="Tư vấn lộ trình học và ưu đãi" />
+            <FormMain title="Tư vấn lộ trình học và ưu đãi" />
           </GridItem>
         </SimpleGrid>
       </Container>

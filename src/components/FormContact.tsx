@@ -281,6 +281,7 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
   f.setAttribute("frameborder", "0");
   f.setAttribute("marginheight", "0");
   f.setAttribute("marginwidth", "0");
+  f.setAttribute("title", "Form");
   const s = document.getElementById(id);
 
   if (!s?.hasChildNodes()) s?.appendChild(f);
@@ -351,19 +352,27 @@ export const FormMain = ({ title }: { title?: string }) => {
   }, [isLoading, id, href]);
   return (
     <>
-      {title && (
-        <Heading
-          as={"h2"}
-          size={{ base: "md", md: "lg" }}
-          textAlign={"center"}
-          color={"#00b14f"}
-          pb={"16px"}
-        >
-          {title}
-        </Heading>
-      )}
-      {isLoading && <Loading he={"38vh"} />}
-      {!isLoading && <div id={id} />}
+      <Box
+        bg={"white"}
+        rounded={"xl"}
+        px={"24px"}
+        py={"24px"}
+        h={"max-content"}
+      >
+        {title && (
+          <Heading
+            as={"h2"}
+            size={{ base: "md", md: "lg" }}
+            textAlign={"center"}
+            color={"#00b14f"}
+            pb={"16px"}
+          >
+            {title}
+          </Heading>
+        )}
+        {isLoading && <Loading he={"38vh"} />}
+        {!isLoading && <div id={id} />}
+      </Box>
     </>
   );
 };
