@@ -1,6 +1,6 @@
 "use client";
 
-import { SendSheets } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import {
   Box,
   Container,
@@ -55,7 +55,7 @@ const Card: React.FC<CardProps> = ({
     </Box>
   );
 };
-export const Registe = () => {
+export const Contact = () => {
   return (
     <>
       <Box
@@ -94,8 +94,8 @@ export const Registe = () => {
               <Card
                 heading={"Liên hệ"}
                 icon={<Icon as={MdOutlineHeadphones} w={10} h={10} />}
-                description={"0966.000.643"}
-                href={"0966.000.643 "}
+                description={"091.550.0256"}
+                href={"tel:0915500256"}
               />
               <Card
                 heading={"Email"}
@@ -125,8 +125,7 @@ export const Registe = () => {
             style={{ borderRadius: "6px !important" }}
           />
           <Box p={30} boxShadow={"xl"} borderRadius={"6px"}>
-            {" "}
-            <SendSheets title="Tư vấn lộ trình" />
+            <FormMain title="Tư vấn lộ trình" />
           </Box>
         </SimpleGrid>
       </Container>

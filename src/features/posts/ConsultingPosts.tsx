@@ -1,4 +1,4 @@
-import { SendSheets } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { getPosts } from "@/ultil/fetch-auth";
 import { SearchIcon } from "@chakra-ui/icons";
 import {
@@ -129,7 +129,7 @@ export const ConsultingPosts = () => {
             </Box>
 
             <Box pt={"8px"}>
-              <SendSheets title="Đăng ký nhận lộ trình" />
+              <FormMain title="Tư vấn lộ trình" />
             </Box>
           </GridItem>
         </SimpleGrid>

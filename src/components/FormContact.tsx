@@ -277,7 +277,7 @@ const comonForm = ({ id, href }: { id: string; href: string }) => {
   r += "&full_url=" + encodeURIComponent(window.location.href);
   f.setAttribute("src", href + r);
   f.style.width = "100%";
-  f.style.height = "380px";
+  f.style.height = "400px";
   f.setAttribute("frameborder", "0");
   f.setAttribute("marginheight", "0");
   f.setAttribute("marginwidth", "0");
@@ -311,7 +311,7 @@ export const FormPoup = ({
           as={"h2"}
           size={{ base: "md", md: "lg" }}
           textAlign={"center"}
-          color={"blue.700"}
+          color={"#00b14f"}
           pb={"16px"}
         >
           {title}

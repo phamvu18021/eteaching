@@ -13,7 +13,7 @@ export const Logo = () => {
         width={80}
         height={80}
         style={{ borderRadius: "50%" }}
-        src={`/logo-aum.png`}
+        src={`/logo-aum.webp`}
         alt="logo AUM"
       />
       <VStack color={"#007180"} align={"start"}>

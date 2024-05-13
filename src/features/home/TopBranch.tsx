@@ -56,114 +56,102 @@ export const TopBranch = (topBranch: any) => {
     {
       school: "",
       path: topBranch?.topBranch?.major_1?.link || "#",
-      major: topBranch?.topBranch?.major_1?.title || "Quản-trị-kinh-doanh",
+      major: topBranch?.topBranch?.major_1?.title || "Ngôn-ngữ-Trungz",
       desc: topBranch?.topBranch?.major_1?.desc || "Chương trìnhz",
-      title: topBranch?.topBranch?.major_1?.name || "Quản trị kinh doanh",
+      title: topBranch?.topBranch?.major_1?.name || "Ngôn ngữ Trungz",
       image: topBranch?.topBranch?.major_1?.image || "/icon-kd.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_2?.link || "#",
-      major: topBranch?.topBranch?.major_2?.title || "Ngôn-ngữ-Anh",
+      major: topBranch?.topBranch?.major_2?.title || "Ngôn-ngữ-Anhz",
       desc: topBranch?.topBranch?.major_2?.desc || "Hình thứcz",
-      title: topBranch?.topBranch?.major_2?.name || "Ngôn ngữ Anh",
+      title: topBranch?.topBranch?.major_2?.name || "Ngôn ngữ Anhz",
       image: topBranch?.topBranch?.major_2?.image || "/icon-nna.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_3?.link || "#",
-      major: topBranch?.topBranch?.major_3?.title || "Công-nghệ-thông-tin",
+      major: topBranch?.topBranch?.major_3?.title || "Quản-trị-kinh-doanhz",
       desc: topBranch?.topBranch?.major_3?.desc || "Phát triển",
-      title: topBranch?.topBranch?.major_3?.name || "It",
-      image: topBranch?.topBranch?.major_3?.image || "/icon-it.webp"
+      title: topBranch?.topBranch?.major_3?.name || "Quản trị kinh doanhz",
+      image: topBranch?.topBranch?.major_3?.image || "/icon-qktd.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_4?.link || "#",
-      major: topBranch?.topBranch?.major_4?.title || "Tài-chính-ngân-hàng",
+      major: topBranch?.topBranch?.major_4?.title || "Thương-mại-điện-tửz",
       desc: topBranch?.topBranch?.major_4?.desc || "NEU E-Learning ",
-      title: topBranch?.topBranch?.major_4?.name || "Tài chính ngân hàng",
-      image: topBranch?.topBranch?.major_4?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_4?.name || "Thương mại điện tửz",
+      image: topBranch?.topBranch?.major_4?.image || "/icon-tmdt.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_5?.link || "#",
-      major: topBranch?.topBranch?.major_5?.title || "Luật",
+      major: topBranch?.topBranch?.major_5?.title || "Công-nghệ-thông-tinz",
       desc: topBranch?.topBranch?.major_5?.desc || "Luôn cập nhật",
-      title: topBranch?.topBranch?.major_5?.name || "Luật",
+      title: topBranch?.topBranch?.major_5?.name || "Công nghệ thông tinz",
       image: topBranch?.topBranch?.major_5?.image || "/icon-l.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_6?.link || "#",
-      major: topBranch?.topBranch?.major_6?.title || "Luật-kinh-tế",
+      major: topBranch?.topBranch?.major_6?.title || "Luậtz",
       desc: topBranch?.topBranch?.major_6?.desc || "Không cần",
-      title: topBranch?.topBranch?.major_6?.name || "Luật kinh tế",
-      image: topBranch?.topBranch?.major_6?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_6?.name || "Luậtz",
+      image: topBranch?.topBranch?.major_6?.image || "/icon-l.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_7?.link || "#",
-      major: topBranch?.topBranch?.major_7?.title || "Quản-trị-kinh-doanh",
+      major: topBranch?.topBranch?.major_7?.title || "Luật-kinh-tếz",
       desc: topBranch?.topBranch?.major_7?.desc || "Chương trình ",
-      title: topBranch?.topBranch?.major_7?.name || "Quản trị kinh doanh",
-      image: topBranch?.topBranch?.major_7?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_7?.name || "Luật kinh tếz",
+      image: topBranch?.topBranch?.major_7?.image || "/icon-lkt.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_8?.link || "#",
-      major: topBranch?.topBranch?.major_8?.title || "Ngôn-ngữ-Anh",
+      major: topBranch?.topBranch?.major_8?.title || "Tài-chính-ngân-hàngz",
       desc: topBranch?.topBranch?.major_8?.desc || "Hình thức",
-      title: topBranch?.topBranch?.major_8?.name || "Ngôn ngữ Anh",
+      title: topBranch?.topBranch?.major_8?.name || "Tài chính ngân hàngz",
       image: topBranch?.topBranch?.major_8?.image || "/icon-tcnh.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_9?.link || "#",
-      major: topBranch?.topBranch?.major_9?.title || "Kế-toán",
+      major: topBranch?.topBranch?.major_9?.title || "Kế-toánz",
       desc: topBranch?.topBranch?.major_9?.desc || "Phát triển ",
-      title: topBranch?.topBranch?.major_9?.name || "Áp dụng thực tiễn",
-      image: topBranch?.topBranch?.major_9?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_9?.name || "Kế-toánz",
+      image: topBranch?.topBranch?.major_9?.image || "/icon-kt.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_10?.link || "#",
-      major: topBranch?.topBranch?.major_10?.title || "Công-nghệ-thông-tin",
+      major: topBranch?.topBranch?.major_10?.title || "Kế-toán-tổng-hợpz",
       desc: topBranch?.topBranch?.major_10?.desc || "NEU E-Learning ",
-      title: topBranch?.topBranch?.major_10?.name || "Thương hiệu top 1 ",
-      image: topBranch?.topBranch?.major_10?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_10?.name || "Kế toán tổng hợpz",
+      image: topBranch?.topBranch?.major_10?.image || "/icon-kt.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_11?.link || "#",
-      major: topBranch?.topBranch?.major_11?.title || "Luật-kinh-tế",
+      major: topBranch?.topBranch?.major_11?.title || "Điện-tử-viễn-thôngz",
       desc: topBranch?.topBranch?.major_11?.desc || "cập nhật",
-      title: topBranch?.topBranch?.major_11?.name || "Tư vấn 24/7",
-      image: topBranch?.topBranch?.major_11?.image || "/icon-tcnh.webp"
+      title: topBranch?.topBranch?.major_11?.name || "Điện tử viễn thôngz",
+      image: topBranch?.topBranch?.major_11?.image || "/icon-dtvt.webp"
     },
     {
       school: "",
       path: topBranch?.topBranch?.major_12?.link || "#",
-      major: topBranch?.topBranch?.major_12?.title || "Công-nghệ-thông-tin",
+      major:
+        topBranch?.topBranch?.major_12?.title ||
+        "Thương-mại-điện-tử-và-Marketing-sốz",
       desc: topBranch?.topBranch?.major_12?.desc || "thi tuyển",
-      title: topBranch?.topBranch?.major_12?.name || "Công nghệ thông tin",
-      image: topBranch?.topBranch?.major_12?.image || "/icon-tcn2.webp"
-    },
-    {
-      school: "",
-      path: topBranch?.topBranch?.major_13?.link || "#",
-      major: topBranch?.topBranch?.major_13?.title || "Công-nghệ-thông-tin",
-      desc: topBranch?.topBranch?.major_13?.desc || " thi tuyển",
-      title: topBranch?.topBranch?.major_13?.name || "Công nghệ thông tin",
-      image: topBranch?.topBranch?.major_13?.image || "/icon-tcnh.webp"
-    },
-    {
-      school: "",
-      path: topBranch?.topBranch?.major_14?.link || "#",
-      major: topBranch?.topBranch?.major_14?.title || "Tài-chính-ngân-hàng",
-      desc: topBranch?.topBranch?.major_14?.desc || "Bằng ",
-      title: topBranch?.topBranch?.major_14?.name || "Tài chính ngân hàng",
-      image: topBranch?.topBranch?.major_14?.image || "/icon-tcnh.webp"
+      title:
+        topBranch?.topBranch?.major_12?.name ||
+        "Thương mại điện tử và Marketing sốz",
+      image: topBranch?.topBranch?.major_12?.image || "/icon-tmdtmkt.webp"
     }
   ];
   return (

@@ -113,7 +113,7 @@ export const FilterHomepage = () => {
                 fontSize={"14px"}
                 fontWeight={"500"}
               >
-                All
+                Tất cả
               </Button>
             </SwiperSlide>
 

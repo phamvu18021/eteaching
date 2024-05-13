@@ -62,7 +62,7 @@ export const menus = [
   },
 
   {
-    path: "/dang-ky", // the url
+    path: "/lien-he", // the url
     title: "Liên hệ"
   },
 

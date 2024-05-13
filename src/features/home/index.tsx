@@ -5,49 +5,49 @@ import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 
 const Banner = dynamic(() => import("./Banner").then((mod) => mod.Banner), {
-  loading: () => <p>Loading...</p>
+  loading: () => <></>
 });
 
 const Benefit = dynamic(() => import("./Benefit").then((mod) => mod.Benefit), {
-  loading: () => <p>Loading...</p>
+  loading: () => <></>
 });
 
 const AdmissionsNews = dynamic(
   () => import("./AdmissionsNews").then((mod) => mod.AdmissionsNews),
   {
-    loading: () => <p>Loading...</p>
+    loading: () => <></>
   }
 );
 
 const Consulting = dynamic(
   () => import("./Consulting").then((mod) => mod.Consulting),
   {
-    loading: () => <p>Loading...</p>
+    loading: () => <></>
   }
 );
 
 const TopBranch = dynamic(
   () => import("./TopBranch").then((mod) => mod.TopBranch),
   {
-    loading: () => <p>Loading...</p>
+    loading: () => <></>
   }
 );
 
 const TopSchool = dynamic(
   () => import("./TopSchool").then((mod) => mod.TopSchool),
   {
-    loading: () => <p>Loading...</p>
+    loading: () => <></>
   }
 );
 
 const Contact = dynamic(() => import("./Contact").then((mod) => mod.Contact), {
-  loading: () => <p>Loading...</p>
+  loading: () => <></>
 });
 
 const LastestPost = dynamic(
   () => import("./LastestPost").then((mod) => mod.LastestPost),
   {
-    loading: () => <p>Loading...</p>
+    loading: () => <></>
   }
 );
 
@@ -77,8 +77,8 @@ export const Home = () => {
   }, []);
   return (
     <>
-      <Banner banner={home_content?.acf?.banner} />
-      <Benefit benefit={home_content?.acf?.benefit} />
+      <Banner priority banner={home_content?.acf?.banner} />
+      <Benefit priority benefit={home_content?.acf?.benefit} />
       <AdmissionsNews admissonsTitle={home_content?.acf?.title_admisson} />
       <Consulting consulting={home_content?.acf?.consulting} />
       <TopBranch topBranch={home_content?.acf?.top_major} />

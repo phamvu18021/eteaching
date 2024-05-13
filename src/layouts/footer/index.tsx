@@ -55,17 +55,19 @@ export const Footer = () => {
                   color: "#009643"
                 }}
               >
-                {" "}
                 <FaMapMarkerAlt />
               </span>
               Địa chỉ: Số 116 Trần Vỹ, Phường Mai Dịch, Quận Cầu Giấy, Thành phố
               Hà Nội.
             </Flex>
             <Flex
+              as={Link}
               color={"#4d5965"}
               fontSize={"sm"}
               align={"center"}
               justifyContent={{ lg: "space-evenly", md: "flex-start" }}
+              href={"tel:0915500256"}
+              _hover={{ textDecoration: "underline" }}
             >
               <span
                 style={{
@@ -74,17 +76,17 @@ export const Footer = () => {
                   color: "#009643"
                 }}
               >
-                {" "}
                 <MdLocalPhone />
               </span>
-              0966.000.643
+              091.550.0256
             </Flex>
-            <Link href={"#"}>
+            <Link href={"https://eteaching.vn/"}>
               <Flex
                 color={"#4d5965"}
                 fontSize={"sm"}
                 align={"center"}
                 justifyContent={{ lg: "space-evenly", md: "flex-start" }}
+                _hover={{ textDecoration: "underline" }}
               >
                 <span
                   style={{
@@ -93,10 +95,9 @@ export const Footer = () => {
                     color: "#009643"
                   }}
                 >
-                  {" "}
                   <IoIosGlobe />
                 </span>
-                Eteaching.vn
+                https://eteaching.vn/
               </Flex>
             </Link>
           </Stack>
@@ -126,10 +127,13 @@ export const Footer = () => {
               Trường Đại học Nông Lâm Thái Nguyên
             </Box>
             <Box as={Link} href={"#"} _hover={{ textDecoration: "underline" }}>
-              Đại học Mở Hà Nội
+              Trường Đại học Mở Hà Nội
             </Box>
             <Box as={Link} href={"#"} _hover={{ textDecoration: "underline" }}>
               Học viện Tài Chính
+            </Box>
+            <Box as={Link} href={"#"} _hover={{ textDecoration: "underline" }}>
+              Trường Đại học Đại Nam
             </Box>
           </Stack>
           <Stack>

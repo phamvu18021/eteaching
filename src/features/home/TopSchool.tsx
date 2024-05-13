@@ -54,7 +54,9 @@ export const TopSchool = (topSchool: any) => {
       title:
         topSchool?.topSchool?.university_2?.title ||
         "Đại học Nông Lâm Thái Nguyên",
-      desc: topSchool?.topSchool?.university_2?.name || `Hệ đào tạo từ xa`
+      desc:
+        topSchool?.topSchool?.university_2?.name ||
+        `Hệ đào tạo từ xa Đại học Nông Lâm Thái Nguyên`
     },
     {
       school: topSchool?.topSchool?.university_3?.name || "dai-hoc-mo-ha-noi",
@@ -64,7 +66,7 @@ export const TopSchool = (topSchool: any) => {
       title: topSchool?.topSchool?.university_3?.title || "Đại học Mở Hà Nội",
       desc:
         topSchool?.topSchool?.university_3?.name ||
-        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+        `Hệ đào tạo từ xa Đại học Mở Hà Nội`
     },
     {
       school:
@@ -76,18 +78,14 @@ export const TopSchool = (topSchool: any) => {
       title:
         topSchool?.topSchool?.university_4?.title ||
         "Đại học Kỹ Thuật Công Nghiệp Thái Nguyên",
-      desc:
-        topSchool?.topSchool?.university_4?.name ||
-        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+      desc: topSchool?.topSchool?.university_4?.name || `Hệ đào tạo từ xa`
     },
     {
       school: topSchool?.topSchool?.university_5?.name || "hoc-vien-tai-chinh",
       major: "",
       path: topSchool?.topSchool?.university_5?.link || "#",
       image: topSchool?.topSchool?.university_5?.image || "/Logo-hvtc1.webp",
-      desc:
-        topSchool?.topSchool?.university_5?.title ||
-        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`,
+      desc: topSchool?.topSchool?.university_5?.title || `Hệ đào tạo từ xa`,
       title: topSchool?.topSchool?.university_5?.name || "Học viện Tài chính"
     },
     {
@@ -98,9 +96,7 @@ export const TopSchool = (topSchool: any) => {
       image: topSchool?.topSchool?.university_6?.image || "/Logo-neu3.webp",
       title:
         topSchool?.topSchool?.university_6?.title || "Đại học Kinh tế Quốc dân",
-      desc:
-        topSchool?.topSchool?.university_6?.name ||
-        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+      desc: topSchool?.topSchool?.university_6?.name || `Hệ đào tạo từ xa`
     },
     {
       school:
@@ -112,9 +108,15 @@ export const TopSchool = (topSchool: any) => {
       title:
         topSchool?.topSchool?.university_7?.title ||
         "Học viện Bưu chính Viễn thông ",
-      desc:
-        topSchool?.topSchool?.university_7?.name ||
-        `Hệ đào tạo từ xa Đại học Kinh tế Quốc dân`
+      desc: topSchool?.topSchool?.university_7?.name || `Hệ đào tạo từ xa`
+    },
+    {
+      school: topSchool?.topSchool?.university_8?.name || "dai-hoc-dai-nam",
+      major: "",
+      path: topSchool?.topSchool?.university_8?.link || "#",
+      image: topSchool?.topSchool?.university_8?.image || "/logo-dnu.webp",
+      title: topSchool?.topSchool?.university_8?.title || "Đại học Đại Nam",
+      desc: topSchool?.topSchool?.university_8?.name || `Hệ đào tạo từ xa`
     }
   ];
   const slidesPerView = {

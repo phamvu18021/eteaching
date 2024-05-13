@@ -195,6 +195,19 @@ export const Benefit = (benefit: any) => {
       image: benefit?.benefit?.Universities?.university_7?.image || `/a6.webp`,
       desc:
         benefit?.benefit?.Universities?.university_7?.logo || `/Logo-ktcn2.webp`
+    },
+    {
+      school: "",
+      major: "",
+      path:
+        benefit?.benefit?.Universities?.university_8?.link ||
+        "https://dec.dainam.edu.vn/",
+      title:
+        benefit?.benefit?.Universities?.university_8?.name ||
+        "Đại học Đại Namz",
+      image: benefit?.benefit?.Universities?.university_8?.image || `/a7.webp`,
+      desc:
+        benefit?.benefit?.Universities?.university_8?.logo || `/logo-dnu.webp`
     }
   ];
 

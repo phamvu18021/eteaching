@@ -269,7 +269,7 @@ export const Swiperlayout = ({
           slidesPerView={dynamicSlidesPerView}
           spaceBetween={21}
           autoplay={{
-            delay: 3000
+            delay: 4000
           }}
           loop={loop}
           grid={grid}
