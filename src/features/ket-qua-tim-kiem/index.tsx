@@ -9,19 +9,19 @@ import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useQuery } from "react-query";
 import { Divider } from "@chakra-ui/react";
-import { toSlug } from "@/ultil/toSlug";
-
+import { deleteSpace } from "@/ultil/deleteSpace";
 export const SearchResults = () => {
   const router = useRouter();
-  const { major, city, method, channel, page } = router.query;
-  const majorQuery =
-    toSlug({
-      input: (major as string) || "",
-      type: "signed"
-    }) || "all";
+  const { major, city, method, channel, school, page } = router.query;
+  const majorQuery = deleteSpace(major as string) || "all";
+  // toSlug({
+  //   input: (major as string) || "",
+  //   type: "signed"
+  // }) || "all";
   const cityQuery = (city as string) || "all";
   const methodQuery = (method as string) || "all";
   const channelQuery = (channel as string) || "all";
+  const schoolQuery = (school as string) || "all";
   const pageQuery = (page as string) || "1";
 
   const { data, isLoading, isError } = useQuery(
@@ -31,7 +31,8 @@ export const SearchResults = () => {
       `${majorQuery}`,
       `${methodQuery}`,
       `${cityQuery}`,
-      `${channelQuery}`
+      `${channelQuery}`,
+      `${schoolQuery}`
     ],
     () =>
       getAdmissions({
@@ -39,7 +40,8 @@ export const SearchResults = () => {
         major: majorQuery as string,
         method: methodQuery as string,
         city: cityQuery as string,
-        channel: channelQuery as string
+        channel: channelQuery as string,
+        school: schoolQuery as string
       })
   );
 
@@ -57,7 +59,7 @@ export const SearchResults = () => {
   );
   const next = () => {
     router.push(
-      `/ket-qua-tim-kiem?major=${majorQuery}&city=${cityQuery}&method=${methodQuery}&channel=${channelQuery}&page=${
+      `/ket-qua-tim-kiem?major=${majorQuery}&city=${cityQuery}&method=${methodQuery}&channel=${channelQuery}&school=${schoolQuery}&page=${
         parseInt(pageQuery) + 1
       }`
     );
@@ -65,7 +67,7 @@ export const SearchResults = () => {
 
   const prev = () => {
     router.push(
-      `/ket-qua-tim-kiem?major=${majorQuery}&method=${methodQuery}&city=${cityQuery}&channel=${channelQuery}&page=${
+      `/ket-qua-tim-kiem?major=${majorQuery}&method=${methodQuery}&city=${cityQuery}&channel=${channelQuery}&school=${schoolQuery}&page=${
         parseInt(pageQuery) - 1
       }`
     );
@@ -75,9 +77,22 @@ export const SearchResults = () => {
     scrollToTop();
   }, [majorQuery, methodQuery, channelQuery, cityQuery, pageQuery]);
 
+  const filterElearnTop = (addmissions: any[]) => {
+    for (let i = 0; i < addmissions.length - 1; i++) {
+      if (
+        addmissions[i].city[0].code != "hoc-tai-nha" &&
+        addmissions[i + 1].city[0].code == "hoc-tai-nha"
+      ) {
+        let temp = addmissions[i];
+        addmissions[i] = addmissions[i + 1];
+        addmissions[i + 1] = temp;
+      }
+    }
+    return addmissions;
+  };
   return (
     <>
-      <Box background={"linear-gradient(90deg,#212f3f,#00b14f)"}>
+      <Box background={"linear-gradient(90deg,#360350,#66008d)"}>
         <Container maxW={"6xl"} py={4}>
           <Text color={"#FFF"} fontSize={"28px"} fontWeight={600}>
             TIN TUYỂN SINH
@@ -92,24 +107,29 @@ export const SearchResults = () => {
             <GridItem colSpan={{ base: 1, lg: 11 }}>
               <Box>
                 <SimpleGrid columns={{ base: 1, md: 1, lg: 1 }} gap={4} py={6}>
-                  {data?.data?.admissions?.map((post: any, index: number) => (
-                    <GridItem key={index}>
-                      <CardAdmission
-                        type="right"
-                        title={post?.title}
-                        desc={post?.school?.label}
-                        image={post?.img_thumb || ""}
-                        path={`/tin-tuyen-sinh?id=${post?._id}&slug=${post?.slug_url}&majors=${post?.major[0]?.code}`}
-                        tags={[
-                          Array.isArray(post?.city) && post?.city[0]?.label,
-                          Array.isArray(post?.major) && post?.major[0]?.label,
-                          Array.isArray(post?.method) && post?.method[0]?.label,
-                          Array.isArray(post?.channel) &&
-                            post?.channel[0]?.label
-                        ]}
-                      />
-                    </GridItem>
-                  ))}
+                  {data?.data?.admissions &&
+                    filterElearnTop(data.data.admissions).map(
+                      (post: any, index: number) => (
+                        <GridItem key={index}>
+                          <CardAdmission
+                            type="right"
+                            title={post?.title}
+                            desc={post?.school?.label}
+                            image={post?.img_thumb || ""}
+                            path={`/tin-tuyen-sinh/${post?.slug_url}`}
+                            tags={[
+                              Array.isArray(post?.city) && post?.city[0]?.label,
+                              Array.isArray(post?.major) &&
+                                post?.major[0]?.label,
+                              Array.isArray(post?.method) &&
+                                post?.method[0]?.label,
+                              Array.isArray(post?.channel) &&
+                                post?.channel[0]?.label
+                            ]}
+                          />
+                        </GridItem>
+                      )
+                    )}
                 </SimpleGrid>
 
                 {!isLoading && data?.data?.admissions?.length > 0 && (
@@ -159,7 +179,7 @@ export const SearchResults = () => {
                                 title={post?.title}
                                 desc={post?.school?.label}
                                 image={post?.img_thumb || ""}
-                                path={`/tin-tuyen-sinh?id=${post?._id}&majors=${post?.major[0]?.code}`}
+                                path={`/tin-tuyen-sinh/${post?.slug_url}`}
                                 tags={[
                                   Array.isArray(post?.city) &&
                                     post?.city[0]?.label,

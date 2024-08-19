@@ -32,11 +32,15 @@ export const LatestPosts = () => {
     <>
       <Container maxW={"6xl"} py={8}>
         {!isLoading && (
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={"0.5"}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 4 }}
+            spacing={"0.5"}
+            gap={4}
+          >
             {posts?.slice(0, 1).map((post: any, index: number) => (
-              <GridItem key={index} rowSpan={2} colSpan={2}>
+              <GridItem key={index} colSpan={2} rowSpan={2}>
                 <CardBlog
-                  type="InfoInsideImg"
+                  type="OutBig"
                   date={post?.date ? formatDate(post.date) : ""}
                   title={post?.title?.rendered}
                   image={post?.featured_image || ""}
@@ -48,7 +52,7 @@ export const LatestPosts = () => {
             {posts?.slice(1, 5).map((post: any, index: number) => (
               <GridItem key={index}>
                 <CardBlog
-                  type="InfoInsideImg"
+                  type="Out"
                   date={""}
                   title={post?.title?.rendered}
                   image={post?.featured_image || ""}

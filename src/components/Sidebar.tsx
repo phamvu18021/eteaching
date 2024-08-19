@@ -1,25 +1,19 @@
 "use client";
 
 import { CardAdmission } from "@/components/CardAdmission";
-import { SendSheets } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { getAdmissions } from "@/ultil/fetch-auth";
 import { Box, GridItem, SimpleGrid } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 import { useQuery } from "react-query";
 import { SkeletonCards } from "./SkeletonCards";
 
-export const Sidebar = () => {
-  const router = useRouter();
-  const majors = router.query?.majors;
-  const id = router.query?.id;
-
+export const Sidebar = ({ school }: { school?: string }) => {
   const { data, isLoading } = useQuery(
-    `getSamePost", ${id}, ${majors}`,
+    `getSamePost", ${school}`,
     () =>
-      id &&
-      majors &&
+      school &&
       getAdmissions({
-        major: String(majors)
+        school: String(school)
       })
   );
 
@@ -41,7 +35,7 @@ export const Sidebar = () => {
                   title={post?.title}
                   desc={post?.school.label}
                   image={post?.img_thumb || ""}
-                  path={`/tin-tuyen-sinh?id=${post?._id}&slug=${post?.slug_url}&majors=${post?.major[0]?.code}`}
+                  path={`/tin-tuyen-sinh/${post?.slug_url}`}
                   tags={[
                     Array.isArray(post?.area) && post?.area[0]?.label,
                     Array.isArray(post?.major) && post?.major[0]?.label,
@@ -54,7 +48,9 @@ export const Sidebar = () => {
         </SimpleGrid>
       </SkeletonCards>
       <Box borderRadius={"6px"} my={10} boxShadow={"lg"} bg={"white"}>
-        <SendSheets title="Tư vấn lộ trình" />
+
+        <FormMain />
+
       </Box>
     </Box>
   );

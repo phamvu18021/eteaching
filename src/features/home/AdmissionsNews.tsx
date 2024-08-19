@@ -57,7 +57,7 @@ export const AdmissionsNews = (admissonsTitle: any) => {
   return (
     <Box bg={"SecondWhite.150"}>
       <Container maxW={"6xl"}>
-        <Text color={"#009643"} fontSize={"24px"} fontWeight={700} py={4}>
+        <Text color={"#4D0070"} fontSize={"24px"} fontWeight={700} py={4}>
           {admissonsTitle?.admissonsTitle || "Đại học tốt nhấtz"}
         </Text>
         <FilterHomepage />
@@ -72,7 +72,7 @@ export const AdmissionsNews = (admissonsTitle: any) => {
                     title={post?.title}
                     desc={post?.school?.label}
                     image={post?.img_thumb}
-                    path={`/tin-tuyen-sinh?id=${post?._id}&slug=${post?.slug_url}&majors=${post?.major[0]?.code}`}
+                    path={`/tin-tuyen-sinh/${post?.slug_url}`}
                     tags={[post?.area[0]?.label, post?.major[0]?.label]}
                   />
                 </GridItem>

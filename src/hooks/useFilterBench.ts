@@ -11,7 +11,7 @@ const filterBlock = ({
     return listBen;
   } else {
     return listBen.filter((item: any) =>
-      item.block_combine.some((item: any) => item.code.includes(blockValue))
+      item.block_combine.some((item: any) => item.label.includes(blockValue))
     );
   }
 };

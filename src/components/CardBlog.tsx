@@ -21,13 +21,11 @@ export const CardBlog = ({
 }) => {
   return (
     <>
-      <Box>
+      <Box as={Link} href={path}>
         <Box
-          as={Link}
-          href={path}
           display={"flex"}
           pos={"relative"}
-          aspectRatio={type === "InfoInsideImg" ? "50 / 45" : "54 / 32"}
+          aspectRatio={type === "OutBig" ? "49 / 34" : "54 / 32"}
           overflow={"hidden"}
           bgImg={image || "/blog.jpeg"}
           bgSize={"cover"}
@@ -51,7 +49,7 @@ export const CardBlog = ({
               p={1}
               align={"center"}
               fontSize={type !== "InfoInsideImg" ? "10px" : "12px"}
-              bg={"#00b14f"}
+              bg={"#690097"}
               color={"white"}
               gap={0.1}
               display={"inline-block"}
@@ -75,7 +73,7 @@ export const CardBlog = ({
                     textOverflow: "ellipsis"
                   }}
                   _hover={{
-                    color: "#00b14f"
+                    color: "#690097"
                   }}
                   dangerouslySetInnerHTML={{ __html: clean(title) }}
                 />
@@ -87,14 +85,50 @@ export const CardBlog = ({
             )}
           </VStack>
         </Box>
-        {type !== "InfoInsideImg" && (
+        {type !== "OutBig" && type !== "Out" && (
           <Text
             className="event-heading"
             color={"facebook.700"}
             fontSize={"12px"}
             fontFamily={"body"}
             fontWeight={"600"}
-            _hover={{ color: "#00b14f" }}
+            _hover={{ color: "#690097" }}
+            css={{
+              display: "-webkit-box",
+              WebkitLineClamp: "4",
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}
+            dangerouslySetInnerHTML={{ __html: clean(title) }}
+          />
+        )}
+        {type == "Out" && (
+          <Text
+            className="event-heading"
+            color={"Black"}
+            fontSize={"16px"}
+            fontFamily={"body"}
+            fontWeight={"600"}
+            _hover={{ color: "#690097" }}
+            css={{
+              display: "-webkit-box",
+              WebkitLineClamp: "4",
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+              textOverflow: "ellipsis"
+            }}
+            dangerouslySetInnerHTML={{ __html: clean(title) }}
+          />
+        )}
+        {type == "OutBig" && (
+          <Text
+            className="event-heading"
+            color={"Black"}
+            fontSize={"24px"}
+            fontFamily={"body"}
+            fontWeight={"600"}
+            _hover={{ color: "#690097" }}
             css={{
               display: "-webkit-box",
               WebkitLineClamp: "4",

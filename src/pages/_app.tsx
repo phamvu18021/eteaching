@@ -3,6 +3,12 @@ import Layout from "@/layouts";
 import { StoreProvider } from "@/redux/store-provider";
 import "@/styles/globals.css";
 import "@/styles/tableContent.css";
+import "@fontsource/roboto"; // Defaults to weight 400
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css"; 
+import "@fontsource/roboto/900.css"; 
+import "@fontsource/roboto/400-italic.css"; // Specify weight and style
 import theme from "@/theme";
 import { ChakraProvider } from "@chakra-ui/react";
 import { NextPage } from "next";

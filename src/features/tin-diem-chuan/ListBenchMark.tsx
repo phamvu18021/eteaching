@@ -84,7 +84,7 @@ export const ListBenchMark = ({
     <>
       <Box borderRadius={"10px"} shadow={"2px 2px 6px rgba(0,0,0,.15)"}>
         <HStack pl={4} py={4} fontWeight={600} fontSize={"18px"}>
-          <Text color={"#00b14f"}>{list?.length}</Text>
+          <Text color={"#4D0070"}>{list?.length}</Text>
           <Text>Kết quả</Text>
         </HStack>
         <FilterBenchMark

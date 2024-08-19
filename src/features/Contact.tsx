@@ -40,7 +40,7 @@ const Card: React.FC<CardProps> = ({
       bg={"white"}
     >
       <Stack align={"start"} spacing={2}>
-        <Box w={16} rounded={"full"} color={"#00b14f"}>
+        <Box w={16} rounded={"full"} color={"#4D0070"}>
           {icon}
         </Box>
         <Box mt={2}>
@@ -73,7 +73,7 @@ export const Contact = () => {
                 w={"130px"}
                 borderRadius={"100px"}
                 textAlign={"center"}
-                bgColor={"#00b14f"}
+                bgColor={"#4D0070"}
                 textColor={"#fff"}
               >
                 Liên hệ
@@ -125,7 +125,7 @@ export const Contact = () => {
             style={{ borderRadius: "6px !important" }}
           />
           <Box p={30} boxShadow={"xl"} borderRadius={"6px"}>
-            <FormMain title="Tư vấn lộ trình" />
+            <FormMain />
           </Box>
         </SimpleGrid>
       </Container>

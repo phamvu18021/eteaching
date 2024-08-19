@@ -117,7 +117,7 @@ export const AboutDk = (props: IBranch) => {
             </Tabs>
           </GridItem>
           <GridItem py={"33px"}>
-            <FormMain title="Để lại thông tin" />
+            <FormMain />
           </GridItem>
         </SimpleGrid>
       </Container>

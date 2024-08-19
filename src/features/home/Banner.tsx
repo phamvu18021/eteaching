@@ -77,14 +77,14 @@ export const Banner = (banner: any) => {
 
   return (
     <Box
-      bgImage={"./bga1.jpg"}
+      bgImage={"./bga2.jpg"}
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
     >
       <Container maxW={"6xl"}>
         <Text
           pt="32px"
-          color={"#009643"}
+          color={"#4D0070"}
           fontSize={" max(1.6vw, 20px)"}
           fontWeight={700}
           lineHeight="40px"

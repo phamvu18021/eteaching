@@ -14,7 +14,7 @@ const Lienhe = dynamic(
 const Page = () => {
   return (
     <>
-      <NextSeo title="" description="" />
+      <NextSeo title="Liên hệ" description="" />
       <Lienhe />
     </>
   );

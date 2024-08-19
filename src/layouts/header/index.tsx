@@ -7,7 +7,7 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import { DesktopNav } from "../components/DeskhopNav";
 import { Logo } from "../components/Logo";
 import { MobileNav } from "../components/MobileNav";
-import { FormPoup } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { useEffect, useState } from "react";
 export const Header = () => {
   const [id, setId] = useState("");
@@ -16,7 +16,7 @@ export const Header = () => {
   useEffect(() => {
     const getForm = async () => {
       try {
-        const res = await fetch(`/api/data-form/?type=form-poup`);
+        const res = await fetch(`/api/data-form/?type=form-main`);
         const data = await res.json();
         const id = data?.id || "";
         id && setId(id);
@@ -36,7 +36,7 @@ export const Header = () => {
         top={0}
         left={0}
         right={0}
-        zIndex={10}
+        zIndex={999}
         bg={"#ffffff"}
       >
         <Container
@@ -44,12 +44,11 @@ export const Header = () => {
           bg={"#ffffff"}
           color={"gray.600"}
           minH={"60px"}
-          px={{ base: 4 }}
           align={"center"}
-          maxW="8xl"
+          maxW="6xl"
           justifyContent={{ base: "space-between" }}
         >
-          <Box py="20px" maxW={"220px"}>
+          <Box maxW={"220px"}>
             <Logo />
           </Box>
 
@@ -60,16 +59,13 @@ export const Header = () => {
           >
             <MobileNav />
           </Flex>
-          <Flex
-            flex={{ base: 1 }}
-            justify={{ base: "center", lg: "space-between" }}
-            align={"center"}
-            display={{ base: "none", lg: "flex" }}
-          >
-            <Flex display={{ base: "none", lg: "flex" }} ml={10}>
-              <DesktopNav />
-            </Flex>
-            <BtnTheme onClick={onOpen}>Đăng ký tư vấn</BtnTheme>
+
+          <Flex display={{ base: "none", lg: "flex" }}>
+            <DesktopNav />
+          </Flex>
+
+          <Flex display={{ base: "none", lg: "flex" }}>
+            <BtnTheme onClick={onOpen}>Đăng ký tư vấn</BtnTheme>{" "}
           </Flex>
         </Container>
       </Box>
@@ -78,7 +74,7 @@ export const Header = () => {
         onClose={() => onClose && onClose()}
         onOpen={() => onOpen && onOpen()}
       >
-        <FormPoup id={id} href={href} title="Tư vấn lộ trình" />
+        <FormMain />
       </ModalBase>
     </>
   );

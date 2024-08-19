@@ -33,7 +33,7 @@ export const CardAdmission = ({
         as={Link}
         boxShadow={type == "under" ? "none" : "sm"}
         href={path ?? "#"}
-        bg={type == "right" ? "SecondGreen.100" : "white"}
+        bg={type == "right" ? "#F9F2FF" : "white"}
         p={4}
         border={"1px solid"}
         borderColor={"transparent"}
@@ -41,13 +41,13 @@ export const CardAdmission = ({
         _hover={{
           bg:
             type == "right"
-              ? "SecondGreen.100"
+              ? "#ECD3F0"
               : type == "under"
               ? "SecondWhite.100"
               : "white",
-          borderColor: type !== "under" ? "SecondGreen.200" : "gray.300",
-          textColor: "green",
-          color: "green.400"
+          borderColor: type !== "under" ? "#690097" : "gray.300",
+          textColor: "#690097",
+          color: "#690097"
         }}
       >
         <SimpleGrid

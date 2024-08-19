@@ -41,19 +41,19 @@ export const UniversityTab = ({
   return (
     <>
       <Box>
-        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#00b14f"}>
+        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#690097"}>
           Xem điểm chuẩn theo trường
         </Text>
 
         <HStack
-          border={"1px solid #00b14f"}
+          border={"1px solid #690097"}
           borderRadius={"4px"}
           py={2}
           px={4}
           my={4}
           bg={"rgb(0, 255, 144,0.01)"}
         >
-          <BsSearch color="#00b14f" />
+          <BsSearch color="#4D0070" />
           <Input
             ml="10px"
             variant="unstyled"
@@ -65,7 +65,11 @@ export const UniversityTab = ({
         <SimpleGrid>
           {unis?.map((item: any, index: number) => (
             <GridItem key={index} colSpan={1} py={2}>
-              <CardUniversity name={item.label} code={item.school} />
+              <CardUniversity
+                name={item.label}
+                code={item.school}
+                description={item.description}
+              />
             </GridItem>
           ))}
         </SimpleGrid>

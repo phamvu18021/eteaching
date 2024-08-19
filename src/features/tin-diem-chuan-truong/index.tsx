@@ -1,4 +1,11 @@
-import { Box, Container, HStack, Text, VStack } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  HStack,
+  Skeleton,
+  Text,
+  VStack
+} from "@chakra-ui/react";
 import { ListBenchMark } from "../tin-diem-chuan/ListBenchMark";
 import { SelectComponent } from "../../components/Select";
 import { useQuery } from "react-query";
@@ -9,8 +16,7 @@ import Image from "next/image";
 import { useState } from "react";
 export const BenchMarkUniversity = () => {
   const router = useRouter();
-  const { unicode } = router.query;
-  const unicodeQuery = (unicode as string) || "neu";
+  const unicodeQuery = (router.query.slug as string) || "neu";
 
   const { data: data2, isLoading: isLoadingBench } = useQuery(
     ["benchmark", `${unicodeQuery}`],
@@ -46,15 +52,21 @@ export const BenchMarkUniversity = () => {
           <HStack pt={8}>
             <Image
               alt="ảnh trường"
-              src={data2?.info[0].img_url}
+              src={data2?.info[0]?.img_url || `/default.jpg`}
               width={100}
               height={100}
             />
             <VStack align="left">
-              <Text fontSize={"24px"} color={"#00b14f"} fontWeight={600}>
-                {data2?.info[0].label}
-              </Text>
-              <Text fontSize={"16px"}>Mã trường : {data2?.info[0].code}</Text>
+              <Skeleton isLoaded={data2}>
+                <Text fontSize={"24px"} color={"#4D0070"} fontWeight={600}>
+                  {data2?.info[0]?.label || "Đại học kinh tế quốc dân"}
+                </Text>
+              </Skeleton>
+              <Skeleton isLoaded={data2}>
+                <Text fontSize={"16px"}>
+                  Mã trường : {data2?.info[0]?.code || "AUM"}
+                </Text>
+              </Skeleton>
             </VStack>
           </HStack>
 

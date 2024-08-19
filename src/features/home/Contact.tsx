@@ -5,7 +5,7 @@ export const Contact = (contact: any) => {
   return (
     <Box
       py={"80px"}
-      backgroundImage="/hotline_bg.png"
+      backgroundImage="/contact-section.jpg"
       backgroundPosition="center"
       backgroundRepeat="no-repeat"
     >
@@ -69,7 +69,7 @@ export const Contact = (contact: any) => {
             </Box>
           </GridItem>
           <GridItem>
-            <FormMain title="Tư vấn lộ trình học và ưu đãi" />
+            <FormMain />
           </GridItem>
         </SimpleGrid>
       </Container>

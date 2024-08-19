@@ -13,20 +13,20 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { BsChevronRight } from "react-icons/bs";
 
-interface INavItem {
-  title: string;
-  children?: Array<INavItem>;
-  path?: string;
-}
+// interface INavItem {
+//   title: string;
+//   children?: Array<INavItem>;
+//   path?: string;
+// }
 
 export const DesktopNav = () => {
   const linkColor = "#212f3f";
-  const linkHoverColor = "#00b14f";
+  const linkHoverColor = "#4D0070";
   const popoverContentBgColor = "white";
   const router = useRouter();
 
   return (
-    <Stack direction={"row"} spacing={4} alignItems={"center"}>
+    <Stack direction={"row"} alignItems={"center"} justifyContent={"center"}>
       {menus.map((navItem) => (
         <Box key={navItem.title}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -34,8 +34,9 @@ export const DesktopNav = () => {
               <Box
                 as={Link}
                 p={2}
+                px={2}
                 href={navItem.path ?? "#"}
-                fontSize={"14px"}
+                fontSize={"15px"}
                 fontWeight={600}
                 color={
                   router.asPath === (navItem.path || "/")
@@ -58,11 +59,38 @@ export const DesktopNav = () => {
                 bg={popoverContentBgColor}
                 p={4}
                 rounded={"xl"}
-                minW={"sm"}
+                minW={"xs"}
               >
                 <Stack>
-                  {navItem.childs.map((child) => (
-                    <DesktopSubNav key={child.title} {...child} />
+                  {navItem.childs.map((child: any) => (
+                    <Popover
+                      trigger={"hover"}
+                      key={child.title}
+                      placement={"right-start"}
+                    >
+                      <PopoverTrigger>
+                        <Stack>
+                          <DesktopSubNav key={child.title} {...child} />
+                        </Stack>
+                      </PopoverTrigger>
+
+                      {child && child.childs2 && (
+                        <PopoverContent
+                          border={0}
+                          boxShadow={"xl"}
+                          bg={popoverContentBgColor}
+                          p={4}
+                          rounded={"xl"}
+                          minW={"xs"}
+                        >
+                          <Stack>
+                            {child.childs2.map((child2: any) => (
+                              <DesktopSubNav key={child2.title} {...child2} />
+                            ))}
+                          </Stack>
+                        </PopoverContent>
+                      )}
+                    </Popover>
                   ))}
                 </Stack>
               </PopoverContent>
@@ -74,7 +102,13 @@ export const DesktopNav = () => {
   );
 };
 
-export const DesktopSubNav = ({ title, path }: INavItem) => {
+export const DesktopSubNav = ({
+  title,
+  path
+}: {
+  title: string;
+  path: string;
+}) => {
   return (
     <Box
       as={Link}
@@ -90,7 +124,7 @@ export const DesktopSubNav = ({ title, path }: INavItem) => {
           <Text
             transition={"all .3s ease"}
             color={"#212f3f"}
-            _groupHover={{ color: "#00b14f" }}
+            _groupHover={{ color: "#4D0070" }}
             fontWeight={600}
             fontSize={"14px"}
           >
@@ -106,7 +140,7 @@ export const DesktopSubNav = ({ title, path }: INavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"#00b14f"} w={5} h={5} as={BsChevronRight} />
+          <Icon color={"#4D0070"} w={5} h={5} as={BsChevronRight} />
         </Flex>
       </Stack>
     </Box>

@@ -70,16 +70,17 @@ export const CardBlogImageOut = ({
             colSpan={type == "InfoOnRight" ? 2 : 1}
             px={2}
             justifyContent={"space-between"}
+            display={"inherit"}
           >
             <Heading
               color={type == "Briefly" ? "black" : "facebook.800"}
               as={"h3"}
               fontSize={
-                type == "InfoOnRight" ? "14px" : { base: "16px", lg: "20px" }
+                type == "InfoOnRight" ? "16px" : { base: "16px", lg: "20px" }
               }
               fontWeight={"600"}
-              mt={type == "InfoOnRight" ? 1 : 0}
-              _hover={{ color: "#00b14f" }}
+              // mt={type == "InfoOnRight" ? 0 : 0}
+              _hover={{ color: "#690097" }}
               css={{
                 display: "-webkit-box",
                 WebkitLineClamp: "2",
@@ -89,7 +90,7 @@ export const CardBlogImageOut = ({
               }}
               dangerouslySetInnerHTML={{ __html: clean(title) }}
             />
-            <HStack pt={type == "InfoOnRight" ? { lg: 4, base: 2 } : 2} gap={3}>
+            <HStack pt={type == "InfoOnRight" ? { lg: 3, base: 2 } : 2} gap={3}>
               {tag && (
                 <Text
                   p={1}

@@ -80,8 +80,7 @@ export const globalStyles = {
       100: "#FAFCFE"
     },
     SecondGreen: {
-      100: "#F2FBF6",
-      200: "#00b14f"
+      100: "#F2FBF6"
     },
     SecondWhite: {
       100: "#F5F5F5",

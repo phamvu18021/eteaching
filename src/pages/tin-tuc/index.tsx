@@ -4,7 +4,7 @@ import { NextSeo } from "next-seo";
 const Page = () => {
   return (
     <>
-      <NextSeo title="Tin tức" description="Tin tức" />
+      <NextSeo title="Tin tức" description="Tin tức" />
       <Posts />
     </>
   );

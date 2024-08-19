@@ -31,7 +31,7 @@ const Item = ({
         {title}
       </Text>
       <Text
-        color={"#00b14f"}
+        color={"#4D0070"}
         textAlign="center"
         mt="10px"
         fontSize="14px"
@@ -75,7 +75,7 @@ export const TopBranch = (topBranch: any) => {
       major: topBranch?.topBranch?.major_3?.title || "Quản-trị-kinh-doanhz",
       desc: topBranch?.topBranch?.major_3?.desc || "Phát triển",
       title: topBranch?.topBranch?.major_3?.name || "Quản trị kinh doanhz",
-      image: topBranch?.topBranch?.major_3?.image || "/icon-qktd.webp"
+      image: topBranch?.topBranch?.major_3?.image || "/icon-qtkd.webp"
     },
     {
       school: "",
@@ -160,7 +160,7 @@ export const TopBranch = (topBranch: any) => {
         position={"relative"}
         top="110px"
         px="20px"
-        color={"#009643"}
+        color={"#4D0070"}
         fontSize={" max(1.3vw, 20px)"}
         fontWeight={700}
         lineHeight="40px"

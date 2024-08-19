@@ -3,11 +3,17 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   letter-spacing: 0px;
   word-spacing: 0px;
+  font-style: normal;
 }
-
+p {
+  font-family: "Roboto", sans-serif;
+}
+a {
+  font-family: "Roboto", sans-serif;
+}
 /* turn of tindy lib */
 .tox-statusbar {
   display: none !important;

@@ -97,7 +97,7 @@ export const FilterHomepage = () => {
               <Button
                 _hover={{
                   background: "white",
-                  border: "1px solid #00b14f"
+                  border: "1px solid #690097"
                 }}
                 border={"1px solid #E9EAEC"}
                 className={`${`${unit_value}` === "all" ? "active" : ""}`}
@@ -124,7 +124,7 @@ export const FilterHomepage = () => {
                     <Button
                       _hover={{
                         background: "white",
-                        border: "1px solid #00b14f"
+                        border: "1px solid #690097"
                       }}
                       border={"1px solid #E9EAEC"}
                       key={index}

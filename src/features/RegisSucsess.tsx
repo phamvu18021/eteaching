@@ -17,7 +17,7 @@ export const RegisteSucsess = () => {
           height={100}
           alt="Thành công"
         />
-        <Text fontWeight={600} color={"green.700"} pt={"16px"}>
+        <Text fontWeight={600} color={"purple.700"} pt={"16px"}>
           Chúng tôi sẽ liên hệ lại với bạn!
         </Text>
       </Center>

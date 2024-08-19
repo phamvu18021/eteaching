@@ -53,7 +53,7 @@ export const AllPosts = () => {
 
           <GridItem colSpan={1}>
             <Box pb={6}>
-              <Text fontSize={"24px"} fontWeight={700} color={"#00b14f"}>
+              <Text fontSize={"24px"} fontWeight={700} color={"#4D0070"}>
                 Tư vấn tuyển sinh
               </Text>
             </Box>

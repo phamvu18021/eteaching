@@ -40,11 +40,11 @@ export const MajorTab = ({
   return (
     <>
       <Box>
-        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#00b14f"}>
+        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#690097"}>
           Xem điểm chuẩn theo ngành
         </Text>
         <HStack
-          border={"1px solid #00b14f"}
+          border={"1px solid #690097"}
           borderRadius={"4px"}
           py={2}
           px={4}
@@ -52,7 +52,7 @@ export const MajorTab = ({
           mb={6}
           bg={"rgb(0, 255, 144,0.01)"}
         >
-          <BsSearch color="#00b14f" />
+          <BsSearch color="#4D0070" />
           <Input
             ml="10px"
             variant="unstyled"
@@ -64,7 +64,11 @@ export const MajorTab = ({
         <SimpleGrid mt={2} columns={2} gap={{ base: 2, md: 4 }}>
           {major?.map((item: any, index: number) => (
             <GridItem key={index} colSpan={{ base: 2, md: 1 }}>
-              <CardMajor name={item.label} code={item.major} />
+              <CardMajor
+                name={item.label}
+                code={item.major}
+                description={item.description}
+              />
             </GridItem>
           ))}
         </SimpleGrid>

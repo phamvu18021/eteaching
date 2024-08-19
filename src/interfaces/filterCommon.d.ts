@@ -31,6 +31,7 @@ export interface IFilterCommonState {
     city: string;
     channel: string;
     method: string;
+    school: string;
     search_text: string;
   };
 }

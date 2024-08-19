@@ -16,7 +16,9 @@ import {
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { BiLogoTiktok } from "react-icons/bi";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+
 import { useQuery } from "react-query";
 import { SectionPost } from "./SectionPost";
 
@@ -104,7 +106,8 @@ export const ConsultingPosts = () => {
                   colorScheme="facebook"
                   w={"full"}
                   as={Link}
-                  href={"https://www.facebook.com/daihoctuxatnut"}
+                  target="_blank"
+                  href={"https://www.facebook.com/eteaching.vn/"}
                 >
                   <FaFacebook />
                 </Button>
@@ -113,7 +116,8 @@ export const ConsultingPosts = () => {
                   w={"full"}
                   color={"whiteAlpha.800"}
                   as={Link}
-                  href={"https://www.tiktok.com/@tnut_elearning"}
+                  target="_blank"
+                  href={"https://www.tiktok.com/@eteaching.vn"}
                 >
                   <BiLogoTiktok />
                 </Button>
@@ -121,15 +125,16 @@ export const ConsultingPosts = () => {
                   colorScheme="red"
                   w={"full"}
                   as={Link}
-                  href={"https://www.youtube.com/@etnut"}
+                  target="_blank"
+                  href={"https://www.instagram.com/eteaching_vn/"}
                 >
-                  <FaYoutube />
+                  <FaInstagram />
                 </Button>
               </HStack>
             </Box>
 
             <Box pt={"8px"}>
-              <FormMain title="Tư vấn lộ trình" />
+              <FormMain />
             </Box>
           </GridItem>
         </SimpleGrid>

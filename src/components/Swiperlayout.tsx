@@ -77,12 +77,12 @@ const SwiperContainer = styled.div`
     border: none;
     outline: none;
     background-color: hsl(0, 0%, 100%);
-    color: #00b14f;
+    color: #690097;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 3px;
     transition: all 0.5s;
 
     &:hover {
-      background-color: #00b14f;
+      background-color: #690097;
       cursor: pointer;
       color: #ffffff;
     }
@@ -109,7 +109,7 @@ const SwiperContainer = styled.div`
   }
 
   .swiper-pagination-bullet-active {
-    background-color: #00b14f;
+    background-color: #690097;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 `;
@@ -125,7 +125,7 @@ const ListnganhSwiperContainer = styled.div`
     cursor: pointer;
   }
   .swiperSlide:hover {
-    border: 0.5px solid #00b14f;
+    border: 0.5px solid #690097;
     background: #ffffff;
     box-shadow: #00d86144 0px 7px 15px;
   }
@@ -153,7 +153,7 @@ const ListgtSwiperContainer = styled.div`
     cursor: pointer;
   }
   .swiperSlide:hover {
-    border: 0.5px solid #00b14f;
+    border: 0.5px solid #690097;
     background: #ffffff;
     box-shadow: #00d86144 0px 7px 15px;
   }
@@ -174,12 +174,12 @@ const ListgtSwiperContainer = styled.div`
     border: none;
     outline: none;
     background-color: hsl(0, 0%, 100%);
-    color: #00b14f;
-    border: 1px solid #00b14f;
+    color: #690097;
+    border: 1px solid #690097;
     transition: all 0.5s;
 
     &:hover {
-      background-color: #00b14f;
+      background-color: #690097;
       cursor: pointer;
       color: #ffffff;
     }
@@ -255,9 +255,9 @@ export const Swiperlayout = ({
   let handlerClick = (slide: Slide) => {
     const href =
       isContainer === "Listgt"
-        ? `/ket-qua-tim-kiem?major=${slide.major}`
+        ? `${slide.path}`
         : isContainer === "Listnganh"
-        ? `/ket-qua-tim-kiem?school=${slide.school}`
+        ? `${slide.path}`
         : "";
     router.push(href);
   };

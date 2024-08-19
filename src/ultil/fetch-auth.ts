@@ -23,7 +23,7 @@ export const getPosts = async ({
   perpage,
   type
 }: {
-  type?: "news" | "mostview" | "majors" | "university";
+  type?: "news" | "mostview" | "majors" | "university" | "popular";
   page?: string | number;
   perpage: string | number;
 }) => {
@@ -75,10 +75,10 @@ export const getAdmissions = async ({
   }
 };
 
-export const getAdmission = async ({ id }: { id: string }) => {
+export const getAdmission = async ({ slug }: { slug: string }) => {
   try {
     const res = await fetchAuth({
-      api_url: `/api/admin/admission/?id=${id}`,
+      api_url: `/api/admin/admission/?slug=${slug}`,
       method: "POST"
     });
     const data = await res.json();
@@ -86,7 +86,7 @@ export const getAdmission = async ({ id }: { id: string }) => {
     return data;
   } catch (error) {
     console.log(error);
-    return { error: "Filed to get admission" };
+    return { error: "Failed to get admission" };
   }
 };
 
@@ -175,7 +175,7 @@ export const getMajorUniver = async () => {
 export const getBenchMarkByUni = async ({ unicode }: { unicode: string }) => {
   try {
     const response = await fetchAuth({
-      api_url: `/api/admin/benchmark-by-university/?unicode=${unicode}`,
+      api_url: `/api/admin/benchmark-by-university/?slug=${unicode}`,
       method: "POST"
     });
     const data = await response.json();
@@ -189,7 +189,7 @@ export const getBenchMarkByUni = async ({ unicode }: { unicode: string }) => {
 export const getBenchMarkByMajor = async ({ major }: { major: string }) => {
   try {
     const response = await fetchAuth({
-      api_url: `/api/admin/benchmark-by-major/?major=${major}`,
+      api_url: `/api/admin/benchmark-by-major/?slug=${major}`,
       method: "POST"
     });
     const data = await response.json();
@@ -197,5 +197,99 @@ export const getBenchMarkByMajor = async ({ major }: { major: string }) => {
   } catch (error) {
     console.log(error);
     return { error: "Failed to get benchmark by major" };
+  }
+};
+
+export const getSchoolArea = async () => {
+  try {
+    const response = await fetchAuth({
+      api_url: `/api/admin/school-area`,
+      method: "POST"
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Filed to get school area" };
+  }
+};
+
+export const getListSchool = async ({
+  page = "1",
+  perpage = "6",
+  type = "all",
+  schoolArea = "all",
+  major = "all"
+}: {
+  page?: string;
+  perpage?: string;
+  type?: string;
+  schoolArea?: string;
+  major?: string;
+}) => {
+  try {
+    const res = await fetchAuth({
+      api_url: `/api/admin/list-school/?page=${page}&perpage=${perpage}&type=${type}&schoolArea=${schoolArea}&major=${major}`,
+      method: "POST"
+    });
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get list school" };
+  }
+};
+
+export const getSchool = async ({ slug }: { slug: string }) => {
+  try {
+    const res = await fetchAuth({
+      api_url: `/api/admin/school/?slug=${slug}`,
+      method: "POST"
+    });
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get school" };
+  }
+};
+
+export const getListMajor = async ({
+  page = "1",
+  perpage = "6",
+  major_combine = "all"
+}: {
+  page?: string;
+  perpage?: string;
+  major_combine?: string;
+}) => {
+  try {
+    const res = await fetchAuth({
+      api_url: `/api/admin/list-major/?page=${page}&perpage=${perpage}&major_combine=${major_combine}`,
+      method: "POST"
+    });
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get list major" };
+  }
+};
+
+export const getMajor = async ({ slug }: { slug: string }) => {
+  try {
+    const res = await fetchAuth({
+      api_url: `/api/admin/major/?slug=${slug}`,
+      method: "POST"
+    });
+    const data = await res.json();
+
+    return data;
+  } catch (error) {
+    console.log(error);
+    return { error: "Failed to get major" };
   }
 };

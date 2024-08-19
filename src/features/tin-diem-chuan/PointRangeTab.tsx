@@ -21,7 +21,7 @@ export const PointRangeTab = () => {
   return (
     <>
       <Box>
-        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#00b14f"}>
+        <Text py={2} fontSize={"18px"} fontWeight={"600"} color={"#4D0070"}>
           Xem ngành, trường dựa theo điểm dự kiến
         </Text>
         <Box py={10}>

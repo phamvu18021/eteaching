@@ -41,13 +41,13 @@ export const CardBenchMark = ({
     ? (chartData.push(Number(item.point_2021)), chartLabels.push("2021"))
     : null;
   Number(item.point_2022) > 0
-    ? (chartData.push(Number(item.point_2021)), chartLabels.push("2022"))
+    ? (chartData.push(Number(item.point_2022)), chartLabels.push("2022"))
     : null;
   Number(item.point_2023) > 0
-    ? (chartData.push(Number(item.point_2021)), chartLabels.push("2023"))
+    ? (chartData.push(Number(item.point_2023)), chartLabels.push("2023"))
     : null;
   Number(item.point_2024) > 0
-    ? (chartData.push(Number(item.point_2021)), chartLabels.push("2024"))
+    ? (chartData.push(Number(item.point_2024)), chartLabels.push("2024"))
     : null;
   return (
     <>
@@ -75,12 +75,12 @@ export const CardBenchMark = ({
                   w={{ base: "60px", md: "90px", lg: "110px" }}
                   color={"white"}
                   h={"30px"}
-                  bg={"#00b14f"}
+                  bg={"#690097"}
                   fontSize={{ base: "11px", md: "13px" }}
                   boxShadow={"0 1px 2px rgba(0,0,0,.15)"}
                   onClick={() => setMarkButton(true)}
                   cursor={"pointer"}
-                  _hover={{ bg: "#00873C" }}
+                  _hover={{ bg: "#9100D1" }}
                 >
                   <Stack direction={{ base: "column", md: "row" }}>
                     <Text>Theo năm</Text>

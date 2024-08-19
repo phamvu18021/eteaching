@@ -18,7 +18,7 @@ const Item = ({ title, image }: { title: string; image: string }) => {
         left="13px"
         fontSize="14px"
         fontWeight={500}
-        bg="#00b14f"
+        bg="#690097"
       >
         <MdOutlineDiamond />
         <Text fontSize="12px">TOP</Text>
@@ -109,14 +109,6 @@ export const TopSchool = (topSchool: any) => {
         topSchool?.topSchool?.university_7?.title ||
         "Học viện Bưu chính Viễn thông ",
       desc: topSchool?.topSchool?.university_7?.name || `Hệ đào tạo từ xa`
-    },
-    {
-      school: topSchool?.topSchool?.university_8?.name || "dai-hoc-dai-nam",
-      major: "",
-      path: topSchool?.topSchool?.university_8?.link || "#",
-      image: topSchool?.topSchool?.university_8?.image || "/logo-dnu.webp",
-      title: topSchool?.topSchool?.university_8?.title || "Đại học Đại Nam",
-      desc: topSchool?.topSchool?.university_8?.name || `Hệ đào tạo từ xa`
     }
   ];
   const slidesPerView = {
@@ -131,7 +123,7 @@ export const TopSchool = (topSchool: any) => {
       <Text
         pl="20px"
         pt="40px"
-        color={"#009643"}
+        color={"#4D0070"}
         fontSize={" max(1.3vw, 20px)"}
         fontWeight={700}
         lineHeight="40px"

@@ -7,7 +7,7 @@ import Image from "next/image";
 export const Consulting = (consulting: any) => {
   return (
     <Box
-      bgImage={"/bg_header.webp"}
+      bgImage={"/bg-header.jpg"}
       backgroundSize="cover"
       backgroundRepeat="no-repeat"
     >
@@ -19,7 +19,7 @@ export const Consulting = (consulting: any) => {
             md: " 1fr",
             lg: "repeat(2, 1fr)"
           }}
-          color={"#ffffff"}
+          color={"#690097"}
         >
           <GridItem>
             <Text

@@ -3,7 +3,13 @@ import { Banner } from "@/features/home/Banner";
 import { Box, Container, GridItem, SimpleGrid } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
-export const LayoutSidebar = ({ children }: { children: ReactNode }) => {
+export const LayoutSidebar = ({
+  children,
+  school
+}: {
+  children: ReactNode;
+  school?: string;
+}) => {
   return (
     <Box bg={"gray.100"}>
       <Banner />
@@ -11,7 +17,7 @@ export const LayoutSidebar = ({ children }: { children: ReactNode }) => {
         <SimpleGrid columns={{ base: 1, lg: 5 }} spacing={"8"}>
           <GridItem colSpan={{ base: 1, lg: 3 }}>{children}</GridItem>
           <GridItem colSpan={{ base: 1, lg: 2 }}>
-            <Sidebar />
+            <Sidebar school={school} />
           </GridItem>
         </SimpleGrid>
       </Container>

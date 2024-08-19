@@ -34,7 +34,7 @@ export const CardNew = ({
       as={Link}
       href={path ?? "#"}
       _hover={{
-        color: "#00b14f"
+        color: "#4D0070"
       }}
     >
       <SimpleGrid columns={6} spacing={2}>

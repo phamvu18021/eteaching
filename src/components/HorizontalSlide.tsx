@@ -86,7 +86,7 @@ export const HorizontalSlide = ({
         px={2}
         onClick={prev}
       >
-        <BtnCircle border={"1px solid #00b14f"}>
+        <BtnCircle border={"1px solid #690097"}>
           <Icon as={MdOutlineNavigateBefore} w={"20px"} height={"20px"} />
         </BtnCircle>
       </Box>
@@ -107,7 +107,7 @@ export const HorizontalSlide = ({
         alignItems={"center"}
         onClick={() => next()}
       >
-        <BtnCircle border={"1px solid #00b14f"}>
+        <BtnCircle border={"1px solid #690097"}>
           <Icon as={MdOutlineNavigateNext} w={"20px"} height={"20px"} />
         </BtnCircle>
       </Box>

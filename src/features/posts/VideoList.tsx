@@ -86,7 +86,7 @@ export const VideoList: React.FC<VideoListProps> = ({ videos }) => {
             fontSize={"sm"}
             p={4}
             align={"center"}
-            bg={"green.500"}
+            bg={"purple.500"}
             justifyContent={{ lg: "space-evenly", md: "flex-start" }}
           >
             <span style={{ fontSize: "20px", paddingRight: "4px" }}>

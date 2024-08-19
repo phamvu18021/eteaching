@@ -15,6 +15,7 @@ const initialState: IFilterCommonState = {
     city: "all",
     channel: "all",
     method: "all",
+    school: "all",
     search_text: ""
   }
 };

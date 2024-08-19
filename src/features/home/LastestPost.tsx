@@ -42,18 +42,22 @@ export const LastestPost = () => {
         <Text
           fontSize={"24px"}
           fontWeight={"700"}
-          color={"#009643"}
+          color={"#4D0070"}
           pb={"20px"}
           textAlign={{ base: "center", lg: "center" }}
         >
           TIN TỨC CẬP NHẬT
         </Text>
         {!isLoading && (
-          <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={"0.5"}>
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 4 }}
+            spacing={"0.5"}
+            gap={3}
+          >
             {posts?.map((post: any, index: number) => (
               <GridItem key={index}>
                 <CardBlog
-                  type="InfoInsideImg"
+                  type="Out"
                   date={""}
                   title={post?.title?.rendered}
                   image={post?.featured_image || ""}

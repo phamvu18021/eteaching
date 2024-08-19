@@ -131,13 +131,13 @@ export const RangeSliderMarkBench = ({
           40
         </RangeSliderMark>
         <RangeSliderTrack>
-          <RangeSliderFilledTrack bg="#00b14f" />
+          <RangeSliderFilledTrack bg="#690097" />
         </RangeSliderTrack>
         <RangeSliderThumb boxSize={6} index={0}>
-          <Box color="#00b14f" as={MdGraphicEq} />
+          <Box color="#690097" as={MdGraphicEq} />
         </RangeSliderThumb>
         <RangeSliderThumb boxSize={6} index={1}>
-          <Box color="#00b14f" as={MdGraphicEq} />
+          <Box color="#690097" as={MdGraphicEq} />
         </RangeSliderThumb>
       </RangeSlider>
     </>

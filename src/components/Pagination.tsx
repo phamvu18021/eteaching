@@ -25,7 +25,7 @@ export const Pagination = ({
       <Box px={2}>
         <BtnCircle
           border={`1px solid`}
-          borderColor={"green.500"}
+          borderColor={"purple.500"}
           isDisabled={isDisableStart}
           onClick={() => {
             !isDisableStart && prev && prev();
@@ -37,7 +37,7 @@ export const Pagination = ({
 
       {hasCurentPage && (
         <>
-          <Text color="green.500">{currentPage} </Text>
+          <Text color="purple.500">{currentPage} </Text>
           <Text color="gray.400"> / {totalPage} Trang</Text>
         </>
       )}
@@ -46,7 +46,7 @@ export const Pagination = ({
         <BtnCircle
           w={"20px"}
           border={`1px solid`}
-          borderColor={"green.500"}
+          borderColor={"purple.500"}
           isDisabled={isDisableEnd}
           onClick={() => {
             !isDisableEnd && next && next();

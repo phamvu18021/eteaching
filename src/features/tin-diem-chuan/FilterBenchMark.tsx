@@ -21,18 +21,18 @@ export const FilterBenchMark = ({
 }) => {
   const khoi: Option[] = [
     { value: "all", label: "Tất cả các khối" },
-    { value: "a", label: "Khối A" },
-    { value: "b", label: "Khối B" },
-    { value: "c", label: "Khối C" },
-    { value: "d", label: "Khối D" },
-    { value: "h", label: "Khối H" },
-    { value: "m", label: "Khối M" },
-    { value: "n", label: "Khối N" },
-    { value: "s", label: "Khối S" },
-    { value: "t", label: "Khối T" },
-    { value: "k", label: "Khối K" },
-    { value: "r", label: "Khối R" },
-    { value: "v", label: "Khối V" }
+    { value: "A", label: "Khối A" },
+    { value: "B", label: "Khối B" },
+    { value: "C", label: "Khối C" },
+    { value: "D", label: "Khối D" },
+    { value: "H", label: "Khối H" },
+    { value: "M", label: "Khối M" },
+    { value: "N", label: "Khối N" },
+    { value: "S", label: "Khối S" },
+    { value: "T", label: "Khối T" },
+    { value: "K", label: "Khối K" },
+    { value: "R", label: "Khối R" },
+    { value: "V", label: "Khối V" }
   ];
 
   const sort: Option[] = [
@@ -69,13 +69,13 @@ export const FilterBenchMark = ({
           </GridItem>
           <GridItem colSpan={{ base: 2, md: 3 }}>
             <HStack
-              border={"1px solid #00b14f"}
+              border={"1px solid #690097"}
               borderRadius={"4px"}
               py={2}
               px={2}
               bg={"rgb(0, 255, 144,0.01)"}
             >
-              <BsSearch color="#00b14f" />
+              <BsSearch color="#4D0070" />
               <Input
                 ml="10px"
                 variant="unstyled"

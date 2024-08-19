@@ -58,10 +58,10 @@ export const SectionPost = (props: ISectionPost) => {
   return (
     <>
       <Box pb={8}>
-        <Text fontSize={"24px"} fontWeight={700} color={"#00b14f"}>
+        <Text fontSize={"24px"} fontWeight={700} color={"#4D0070"}>
           {title_left}
         </Text>
-        <Divider borderBottomWidth={"4px"} borderBlockEndColor={"#00b14f"} />
+        <Divider borderBottomWidth={"4px"} borderBlockEndColor={"#4D0070"} />
       </Box>
       {type === "all_new" && (
         <SimpleGrid

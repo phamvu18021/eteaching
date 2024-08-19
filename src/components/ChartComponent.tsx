@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Chart from "chart.js/auto";
+import ChartDataLabels from "chartjs-plugin-datalabels";
 
 interface ChartProps {
   data: number[];
@@ -41,7 +42,21 @@ const ChartComponent: React.FC<ChartProps> = ({ data, labels }) => {
                 maxBarThickness: 35
               }
             ]
-          }
+          },
+          options: {
+            plugins: {
+              datalabels: {
+                color: "black",
+                anchor: "end",
+                align: "top",
+                // eslint-disable-next-line no-unused-vars
+                formatter: function (value, context) {
+                  return value;
+                }
+              }
+            }
+          },
+          plugins: [ChartDataLabels]
         });
       }
     }

@@ -33,6 +33,7 @@ export default async function handler(
     const idMostview = 5;
     const idMajors = 6;
     const idUniversity = 7;
+    const idPopular = 432;
     const id =
       type === "news"
         ? idNew
@@ -42,6 +43,8 @@ export default async function handler(
         ? idMajors
         : type === "university"
         ? idUniversity
+        : type === "popular"
+        ? idPopular
         : null;
     const endPoint = id
       ? `${api_url}/posts?_embed&per_page=${perpage}&status=publish&page=${page}&categories=${id}`

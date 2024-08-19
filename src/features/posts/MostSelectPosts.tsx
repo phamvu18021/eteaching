@@ -65,7 +65,7 @@ export const MostSelectPosts = () => {
 
           <GridItem colSpan={2}>
             <Box pb={4}>
-              <Text fontSize={"24px"} fontWeight={700} color={"#00b14f"}>
+              <Text fontSize={"24px"} fontWeight={700} color={"#4D0070"}>
                 Đọc nhiều
               </Text>
             </Box>

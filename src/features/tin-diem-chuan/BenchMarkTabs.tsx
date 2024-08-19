@@ -46,7 +46,7 @@ export const BenchMarkTabs = () => {
                 <Box>
                   <LiaUniversitySolid
                     style={{
-                      color: value == "1" ? "#00b14f" : "#8c99b4"
+                      color: value == "1" ? "#4D0070" : "#8c99b4"
                     }}
                     size={"22px"}
                   />
@@ -66,7 +66,7 @@ export const BenchMarkTabs = () => {
                 <Box>
                   <FaBookOpen
                     style={{
-                      color: value == "2" ? "#00b14f" : "#8c99b4"
+                      color: value == "2" ? "#4D0070" : "#8c99b4"
                     }}
                     size={"20px"}
                   />
@@ -86,7 +86,7 @@ export const BenchMarkTabs = () => {
                 <Box>
                   <FaBook
                     style={{
-                      color: value == "3" ? "#00b14f" : "#8c99b4"
+                      color: value == "3" ? "#4D0070" : "#8c99b4"
                     }}
                     size={"20px"}
                   />

@@ -13,20 +13,25 @@ export default async function handler(
   const headerAuth = req.headers["authorization"];
   const query = req.query as { [key: string]: string };
 
-  const { unicode } = query;
+  const { slug } = query;
 
   const METHOD = req.method;
 
   try {
     if (headerAuth === token) {
       const responOdoo = await fetchAuth({
-        api_url: `${odoo_api}/api/admin/benchmark-by-university?unicode=${unicode}`,
+        api_url: `${odoo_api}/api/admin/benchmark-by-university?slug=${slug}`,
         method: "POST"
       });
 
       const data: {
         status: string;
-        info: { label: string; code: string; desc: string; img_url: string }[];
+        info: {
+          label: string;
+          code: string;
+          description: string;
+          img_url: string;
+        }[];
         data: {
           benchmark: IBenchMarkApi[];
         };

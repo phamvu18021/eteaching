@@ -19,11 +19,11 @@ export default async function handler(
   const token = process.env.NEXT_PUBLIC_TOKEN_NEXT;
   const headerAuth = req.headers["authorization"];
   const query = req.query as { [key: string]: string };
-  const { id } = query;
+  const { slug } = query;
   const METHOD = req.method;
 
   const responOdoo = await fetchAuth({
-    api_url: `${odoo_api}/api/admin/admission/?id=${id}`,
+    api_url: `${odoo_api}/api/admin/admission/?slug=${slug}`,
     method: "POST"
   });
 

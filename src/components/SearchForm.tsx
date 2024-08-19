@@ -155,10 +155,10 @@ const FuseSearch = ({
   );
 };
 
-export const SearchForm = () => {
+export const SearchForm = ({ schoolOther }: { schoolOther?: string }) => {
   const router = useRouter();
   const dispatch = useAppDispatch();
-  const { major, city, method, channel } = router.query;
+  const { major, city, method, channel, school } = router.query;
   const { loading, data, current } = useFilterCommon();
   const [searchText, setSearchText] = useState<string>(current.search_text);
   const [searchFuse, setSearchFuse] = useState<any[]>([]);
@@ -195,6 +195,7 @@ export const SearchForm = () => {
         city: (city as string) || "all",
         method: (method as string) || "all",
         channel: (channel as string) || "all",
+        school: schoolOther ? schoolOther : (school as string) || "all",
         search_text: major !== "all" ? deleteSpace(major as string) || "" : ""
       } as IFilterCommonPayload)
     );
@@ -344,7 +345,7 @@ export const SearchForm = () => {
               input: current.major
             })}&city=${current.city}&method=${current.method}&channel=${
               current.channel
-            }`}
+            }&school=${schoolOther ? schoolOther : current.school}`}
           >
             Tìm kiếm
           </BtnTheme>
@@ -364,10 +365,10 @@ export const SearchForm = () => {
             <AccordionItem>
               <h2>
                 <AccordionButton>
-                  <Box as="span" flex="1" textAlign="left" color={"#00b14f"}>
+                  <Box as="span" flex="1" textAlign="left" color={"#4D0070"}>
                     Tìm kiếm nâng cao
                   </Box>
-                  <AccordionIcon color={"#00b14f"} />
+                  <AccordionIcon color={"#4D0070"} />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>

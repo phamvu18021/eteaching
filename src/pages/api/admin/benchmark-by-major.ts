@@ -13,20 +13,20 @@ export default async function handler(
   const headerAuth = req.headers["authorization"];
   const query = req.query as { [key: string]: string };
 
-  const { major } = query;
+  const { slug } = query;
 
   const METHOD = req.method;
 
   try {
     if (headerAuth === token) {
       const responOdoo = await fetchAuth({
-        api_url: `${odoo_api}/api/admin/benchmark-by-major?major=${major}`,
+        api_url: `${odoo_api}/api/admin/benchmark-by-major?slug=${slug}`,
         method: "POST"
       });
 
       const data: {
         status: string;
-        info: { label: string; code: string; desc: string }[];
+        info: { label: string; code: string; description: string }[];
         data: {
           benchmark: IBenchMarkApi[];
         };

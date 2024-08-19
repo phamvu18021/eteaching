@@ -2,7 +2,7 @@ export const toSlug = ({
   type = "unsigned",
   input
 }: {
-  type?: "unsigned" | "signed";
+  type?: "unsigned" | "signed" | "name";
   input: string;
 }) => {
   // xóa dấu
@@ -43,7 +43,13 @@ export const toSlug = ({
 
       return output;
     }
+    case "name": {
+      // xóa dấu
 
+      const output = input.replace(/[\s-]+/g, " ").trim();
+
+      return output;
+    }
     default:
       return input;
   }

@@ -10,12 +10,13 @@ export const BtnTheme = (props: IBtnTheme) => {
   return (
     <Button
       padding={"12px 20px"}
-      color={"white"}
+      color={"#e7d83b"}
       rounded={"sm"}
       borderRadius={"4px"}
-      bg={"#00b14f"}
+      bg={"#690097"}
+      target="_blank"
       _hover={{
-        background: "#3aa769"
+        background: "#A400ED"
       }}
       fontWeight={400}
       href={href}
@@ -38,9 +39,9 @@ export const BtnQuiz = (props: ButtonProps & { href?: string }) => {
       {...args}
       as={Link}
       href={href}
-      bg={"#00b14f"}
+      bg={"#690097"}
       _hover={{
-        background: "#3aa769"
+        background: "8800BA"
       }}
       fontWeight={400}
     >
@@ -58,11 +59,11 @@ export const BtnCircle = (props: ButtonProps) => {
       display={"flex"}
       justifyContent={"center"}
       alignItems={"center"}
-      color={"green.500"}
+      color={"purple.500"}
       // bg={"green.500"}
       rounded={"full"}
       fontSize={"1.5rem"}
-      _hover={{ bg: "green.400", color: "white" }}
+      _hover={{ bg: "purple.400", color: "white" }}
       _disabled={{
         cursor: "not-allowed",
         bg: "gray.100",

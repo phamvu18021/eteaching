@@ -15,7 +15,7 @@ const TuVanChonTruong = dynamic(
 const Page = () => {
   return (
     <>
-      <NextSeo title="" description="" />
+      <NextSeo title="Eteaching : Cổng thông tin đào tạo" description="" />
       <TuVanChonTruong />
     </>
   );

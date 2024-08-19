@@ -3,14 +3,16 @@ import Link from "next/link";
 
 export const CardUniversity = ({
   name,
-  code
+  code,
+  description
 }: {
   name: string;
   code: string;
+  description: string;
 }) => {
   return (
     <>
-      <Box as={Link} href={`/tin-diem-chuan/truong?unicode=${code}`}>
+      <Box as={Link} href={`/tin-diem-chuan-truong/${description}`}>
         <Box
           boxShadow={"0 1px 2px rgba(0,0,0,.15)"}
           border={"1px solid #f7f7f7"}

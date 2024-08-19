@@ -1,11 +1,12 @@
 "use client";
 
-import { SendSheets } from "@/components/FormContact";
+import { FormMain } from "@/components/FormContact";
 import { Box, Button, Flex, Heading, VStack } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { BiLogoTiktok } from "react-icons/bi";
-import { FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 export const Item = ({
   path,
@@ -57,7 +58,7 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
   return (
     <Box pos={sticky ? "sticky" : "static"} top={sticky} bg={"gray.100"}>
       <Box px={6} pt={"32px"}>
-        <SendSheets title="Tư vấn lộ trình" />
+        <FormMain />
       </Box>
       <Box pt={"32px"}>
         <Heading
@@ -76,7 +77,8 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
               colorScheme="facebook"
               w={"full"}
               as={Link}
-              href={"https://www.facebook.com/"}
+              target="_blank"
+              href={"https://www.facebook.com/eteaching.vn/"}
             >
               Facebook
             </Button>
@@ -86,18 +88,20 @@ export const Sidebar = ({ sticky }: { sticky?: string }) => {
               w={"full"}
               color={"whiteAlpha.800"}
               as={Link}
-              href={"https://www.tiktok.com/"}
+              target="_blank"
+              href={"https://www.tiktok.com/@eteaching.vn"}
             >
               Tiktok
             </Button>
             <Button
-              leftIcon={<FaYoutube />}
+              leftIcon={<FaInstagram />}
               colorScheme="red"
               w={"full"}
               as={Link}
-              href={"https://www.youtube.com/"}
+              target="_blank"
+              href={"https://www.instagram.com/eteaching_vn/"}
             >
-              Youtube
+              Instagram
             </Button>
           </VStack>
         </Box>

@@ -23,7 +23,12 @@ export const ModalBase = (props: IModalBase) => {
     <>
       <Modal isOpen={isOpen} onClose={onClose} isCentered>
         <ModalOverlay />
-        <ModalContent bg={"white"} py={"12px"} rounded={"sm"}>
+        <ModalContent
+          aria-label="model"
+          bg={"white"}
+          py={"12px"}
+          rounded={"sm"}
+        >
           <ModalCloseButton />
           <ModalBody rounded={"xl"} p={0}>
             {children}
